@@ -1,0 +1,250 @@
+/* Variabel CSS untuk kemudahan perubahan tema */
+:root {
+    --primary-color: #ff6b6b; /* Merah muda-cerah */
+    --secondary-color: #333333; /* Abu-abu tua */
+    --background-color: #f4f4f9; /* Latar belakang terang */
+    --card-bg: #ffffff; /* Latar belakang kartu */
+    --text-color: #495057; /* Warna teks */
+    --font-heading: 'Poppins', sans-serif;
+    --gap: 24px;
+}
+
+/* Reset dan Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-heading);
+    line-height: 1.7;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding-top: 70px; /* Jarak untuk header yang fixed */
+}
+
+/* --- Header & Navigasi (Menggunakan Flexbox) --- */
+.header {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin-left: 25px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Tombol Umum --- */
+.btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px; /* Membuat tombol terlihat 'pil' */
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(255, 107, 107, 0.4);
+}
+
+.primary-btn:hover {
+    background-color: #ff4757; /* Sedikit lebih gelap */
+    transform: translateY(-2px); /* Efek angkat */
+    box-shadow: 0 6px 10px rgba(255, 107, 107, 0.6);
+}
+
+/* --- Hero Section (Menggunakan Flexbox) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 50px;
+    min-height: 90vh;
+    background-color: var(--card-bg);
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: var(--gap);
+    line-height: 1.1;
+    color: var(--secondary-color);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: var(--gap) * 1.5;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.hero-image img {
+    max-width: 100%;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Bagian Konten Umum --- */
+section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.about-section {
+    background-color: var(--background-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+}
+
+h2::after { /* Garis pemisah keren di bawah judul */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+}
+
+/* --- Proyek (Menggunakan Flexbox) --- */
+.projects-section {
+    background-color: var(--card-bg);
+}
+
+.project-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+    flex-basis: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary-color); /* Garis warna di atas kartu */
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 50px 50px;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 20px;
+}
+
+.footer-btn {
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+/* --- Responsif Sederhana untuk layar kecil --- */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 20px 40px;
+    }
+
+    .hero-content {
+        order: 2;
+    }
+
+    .hero-image {
+        margin-bottom: 40px;
+        order: 1;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .header {
+        padding: 15px 20px;
+    }
+
+    .nav {
+        display: none; /* Sembunyikan navigasi di perangkat tablet/ponsel */
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+}

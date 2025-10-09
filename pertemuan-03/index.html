@@ -74,69 +74,6 @@
         </section>
 
 
-        <head>
-            ...
-            <style>
-
-#contact {
-  background-color: #f9f9f9;
-  padding: 30px;
-  max-width: 500px;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#contact h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-#contact .form-group {
-  margin-bottom: 15px;
-}
-
-#contact label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
-}
-
-#contact input,
-#contact textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-#contact textarea {
-  resize: vertical;
-  height: 100px;
-}
-
-#contact button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#contact button:hover {
-  background-color: #0056b3;
-}
-
-            </style>
-          </head>
-          
 
         </main>
 
@@ -146,3 +83,72 @@
 
 </body>
 </html>
+
+
+
+<style>
+    /* Styling khusus form di #contact */
+#contact {
+  background-color: #f9f9f9;
+  padding: 30px;
+  max-width: 450px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+#contact label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+#contact textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+#contact button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #0056b3;
+}
+
+</style>

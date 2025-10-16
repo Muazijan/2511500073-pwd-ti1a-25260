@@ -4,6 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      #about {
+        background-color: #007BFF;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 700px;
+        margin: 20px auto;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+      }
+      #about h2 {
+        color: #0f0f0f;
+        border-bottom: 2px solid #0f0f0f;
+        padding-bottom: 6px;
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+      #about p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        margin: 0;
+        padding: 6px 0;
+        border-bottom: 1px #0e0d0d;
+      }
+      #about strong {
+        min-width: 180px;
+        color: #0e0d0d;
+        font-weight: 600;
+        text-align: right;
+        padding-right: 16px;
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 600px){
+        #about p {
+          flex-direction: column;
+          align-items: start;
+        }
+        #about strong{
+          text-align: left;
+          padding-left: 0;
+          margin-bottom: 2px;
+        }
+
+
+      }
+        
+      
+      
+
+
+
+
+    </style>
 </head>
 <body>
 
@@ -73,7 +127,6 @@
 
 
 <style>
-
  
 #contact {
   background-color: #f9f9f9;
@@ -133,6 +186,11 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+
+
+
+
 
 #contact button:hover {
   background-color: rgb(221, 116, 134);

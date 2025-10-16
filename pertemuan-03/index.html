@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
       #about {
         background-color: #007BFF;
@@ -47,17 +48,9 @@
           padding-left: 0;
           margin-bottom: 2px;
         }
-
-
       }
-        
-      
-      
-
-
-
-
     </style>
+
 </head>
 <body>
 
@@ -105,10 +98,10 @@
                   <input type="email" id="txtemail" name="txtemail" placeholder="Masukkan email Anda" required autocomplete="email"/>
                          
                   <label for="txtpesan">Pesan:</label>
-                  <textarea id="xtpesan" name="txtpesan" placeholder="Tulis pesan Anda..." required></textarea>
+                  <textarea id="txtpesan" name="txtpesan" placeholder="Tulis pesan Anda..." required></textarea>
               
-                <button type="submit">Kirim</button>
-                <button type="reset">batal</button>
+                <button type="submit" class="btn-kirim">Kirim</button>
+                <button type="reset" class="btn-batal">Batal</button>
               </form>
           
         </section>
@@ -127,28 +120,44 @@
 
 
 <style>
- 
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+
 #contact {
-  background-color: #f9f9f9;
-  padding: 30px;
-  max-width: 450px;
-  margin: 40px auto;
+  background-image: url(maioo.gif);
+  background-size: cover;
+  background-position: center ; 
+  background-repeat: no-repeat;
+
+  padding: 20px;
+  margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-family: Arial, sans-serif;
+  color: #fff;
+  max-width: 90%;
 }
 
 #contact h2 {
   text-align: center;
-  margin-bottom: 25px;
-  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 #contact label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #555;
 }
 
 #contact input,
@@ -159,13 +168,13 @@
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  box-sizing: border-box;
   transition: border-color 0.3s ease;
+  color: #333;
 }
 
 #contact input:focus,
 #contact textarea:focus {
-  border-color:pink;
+  border-color: pink;
   outline: none;
 }
 
@@ -174,51 +183,60 @@
   height: 100px;
 }
 
+
 #contact button {
   width: 100%;
-  padding: 12px;
-  background-color: #007BFF;
-  color: white;
+  padding: 10px;
   font-size: 16px;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 10px;
 }
 
 
-
-
-
-
-#contact button:hover {
-  background-color: rgb(221, 116, 134);
+#contact .btn-kirim {
+  background-color: #0cf86f;
+  color: rgb(8, 8, 8);
 }
-
-#contact {
-  background-image: url(maioo.gif); 
-  background-size: cover;      
-  background-position: center; 
-  background-repeat: no-repeat;
-  
-  padding: 30px;
-  max-width: 450px;
-  margin: 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-family: Arial, sans-serif;
-  color: white;              
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+#contact .btn-kirim:hover {
+  background-color: #0cf76e;
 }
 
 
+#contact .btn-batal {
+  background-color: #dc3545;
+  color: rgb(8, 8, 8);
+}
+#contact .btn-batal:hover {
+  background-color: #e7263a;
+}
 
+@media (min-width: 768px) {
+  #contact {
+    max-width: 450px;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 10px;
+  }
+
+  #contact h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  #contact input,
+  #contact textarea {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  #contact button {
+    font-size: 16px;
+    padding: 14px;
+  }
+}
 
 </style>

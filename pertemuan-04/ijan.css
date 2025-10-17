@@ -214,3 +214,15 @@ body {
     padding: 14px;
   }
 }
+body{
+  font-family: 'Times New Roman', Times, serift;
+  background-color: #222;
+  color: #003366;
+  line-height: 1,6;
+
+  background-image: url(BATU.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}

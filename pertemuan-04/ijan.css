@@ -53,12 +53,75 @@ Hasil styling h2,
 #home h2,
 #about h2,
 #contact h2 {
-    color: #003366;
+    color: #121213;
     border-bottom: 2px solid #003366;
     padding-bottom: 6px;
     margin-top: 0;
     margin-bottom: 16px;
+    text-align: center;
+    
 }
+#home p {
+  color: #0f0f0f;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+
+
+#home {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+
+.moving-text {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 30px;
+  animation: slideInBounce 2s ease-out forwards;
+}
+
+/* Keyframes animasi */
+@keyframes slideInBounce {
+  0% {
+    transform: translateY(-100px); /* muncul dari atas */
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px);  /* sedikit turun melewati posisi akhir */
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10px); /* naik sedikit */
+  }
+  100% {
+    transform: translateY(0);     /* posisi akhir */
+  }
+}
+
+/* Logo dan GIF */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+}
+
+.center-gif {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+
 footer {
     background: #222;
     color: #aaa;
@@ -117,7 +180,7 @@ header li a:active {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #0e0d0d;
   line-height: 1.6;
 }
 
@@ -131,7 +194,7 @@ body {
 }
 
 #about h2, #contact h2 {
-  color: #003366;
+  color: #0a0a0a;
   border-bottom: 2px solid #003366;
   padding-bottom: 6px;
   margin-top: 0;
@@ -244,3 +307,4 @@ position: relative;
 z-index: 1;
 color: #fff;
 }
+

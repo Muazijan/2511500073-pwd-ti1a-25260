@@ -6,7 +6,7 @@ body{
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
     background-color: blue;
-    color: #333;
+    color: #fffcfc;
     line-height: 1,5;
 }
 
@@ -22,8 +22,8 @@ body {
 }
 
 header{
-    background-color: blue;
-    color: #fff;
+    background-color: rgb(140, 140, 252);
+    color: #f7f6f6;
     padding: 20px;
     text-align: center;
 }
@@ -35,7 +35,7 @@ header ul{
     margin: 10px 0 0;
 }
 header li a{
-    color: #fff;
+    color: #f5f4f4;
     text-decoration: none;
     padding: 6px 12px;
 }
@@ -85,25 +85,24 @@ Hasil styling h2,
   animation: slideInBounce 2s ease-out forwards;
 }
 
-/* Keyframes animasi */
+
 @keyframes slideInBounce {
   0% {
-    transform: translateY(-100px); /* muncul dari atas */
+    transform: translateY(-100px); 
     opacity: 0;
   }
   60% {
-    transform: translateY(20px);  /* sedikit turun melewati posisi akhir */
+    transform: translateY(20px); 
     opacity: 1;
   }
   80% {
-    transform: translateY(-10px); /* naik sedikit */
+    transform: translateY(-10px); 
   }
   100% {
-    transform: translateY(0);     /* posisi akhir */
+    transform: translateY(0);    
   }
 }
 
-/* Logo dan GIF */
 .logo-container {
   margin-bottom: 20px;
 }
@@ -129,7 +128,7 @@ footer {
     padding: 10px;
 }
 header li a:hover {
-    background-color: #85020d;
+    background-color: #85026f;
     border-radius: 6px;
     transition: background-color 0.3s ease;
 }
@@ -265,7 +264,7 @@ body {
 }
 
 footer {
-  background-color: #003366;
+  background-color: rgb(140, 140, 252);
   color: white;
   text-align: center;
   padding: 12px 0;
@@ -308,3 +307,28 @@ z-index: 1;
 color: #fff;
 }
 
+footer {
+  background-color: #007BFF;
+  padding: 10px 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+footer p.bergerak {
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  animation: gerakTeks 10s linear infinite;
+  color: white;
+  font-weight: bold;
+}
+
+@keyframes gerakTeks {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

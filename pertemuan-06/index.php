@@ -293,7 +293,7 @@
 
         #about .row {
             display: flex;
-            justify-content: flex-end; /* label kanan */
+            justify-content: flex-end; 
             margin: 5px 0;
         }
 

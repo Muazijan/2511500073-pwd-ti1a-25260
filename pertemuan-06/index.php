@@ -270,183 +270,139 @@
           </P>
   </section>
 
-  <!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Nilai Saya</title>
-    <style>
-        #about {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            max-width: 600px;
-            margin: 0 auto;
-            color: brown;
-        }
-        #about h2 {
-            color: brown;
-            text-align: left;
-            border-bottom: 1px solid #999;
-            padding-bottom: 5px;
-        }
-
-        #about .row {
-            display: flex;
-            justify-content: flex-end; 
-            margin: 5px 0;
-        }
-
-        #about .row .label {
-            width: 150px;
-            font-weight: bold;
-            text-align: right;
-            padding-right: 10px;
-        }
-
-        #about .row .value {
-            flex: 1;
-            text-align: left;
-            color: black;
-        }
-
-        hr {
-            border: 0.5px solid #999;
-            margin: 15px 0;
-        }
-
-        #total {
-            font-weight: bold;
-            color: brown;
-            margin-top: 20px;
-        }
-
-        #catatan {
-            margin-top: 30px;
-            font-size: 13px;
-            color: black;
-            border-top: 1px solid #999;
-            padding-top: 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <section id="about">
-        <h2>Nilai Saya</h2>
-
-        <?php
- 
-        $dataMatkul = [
-            [
-                'nama' => "Algoritma dan Struktur Data",
-                'sks' => 4,
-                'hadir' => 90,
-                'tugas' => 60,
-                'uts' => 80,
-                'uas' => 70,
-            ],
-            [
-                'nama' => "Agama",
-                'sks' => 2,
-                'hadir' => 70,
-                'tugas' => 50,
-                'uts' => 60,
-                'uas' => 80,
-            ],
-            [
-                'nama' => "Matematika",
-                'sks' => 5,
-                'hadir' => 80,
-                'tugas' => 70,
-                'uts' => 75,
-                'uas' => 60,
-            ],
-            [
-                'nama' => "Basis Data",
-                'sks' => 6,
-                'hadir' => 75,
-                'tugas' => 65,
-                'uts' => 70,
-                'uas' => 79,
-            ],
-            [
-                'nama' => "Pemrograman Web Dasar",
-                'sks' => 3,
-                'hadir' => 69,
-                'tugas' => 80,
-                'uts' => 90,
-                'uas' => 100,
-            ],
-        ];
-
-        function hitungNilaiAkhir($hadir, $tugas, $uts, $uas)
-        {
-            return (0.1 * $hadir) + (0.2 * $tugas) + (0.3 * $uts) + (0.4 * $uas);
-        }
-
-     
-        function tentukanGradeDanMutu($nilaiAkhir)
-        {
-            if ($nilaiAkhir >= 85) {
-                return ['A', 4.00];
-            } elseif ($nilaiAkhir >= 80) {
-                return ['A-', 3.70];
-            } elseif ($nilaiAkhir >= 75) {
-                return ['B+', 3.30];
-            } elseif ($nilaiAkhir >= 70) {
-                return ['B', 3.00];
-            } elseif ($nilaiAkhir >= 65) {
-                return ['B-', 2.70];
-            } elseif ($nilaiAkhir >= 60) {
-                return ['C+', 2.30];
-            } elseif ($nilaiAkhir >= 50) {
-                return ['C', 2.00];
-            } elseif ($nilaiAkhir >= 40) {
-                return ['D', 1.00];
-            } else {
-                return ['E', 0.00];
-            }
-        }
-
-        $totalBobot = 0;
-        $totalSKS = 0;
-
-        foreach ($dataMatkul as $index => $matkul) {
-
-            $nilaiAkhir = round(hitungNilaiAkhir($matkul['hadir'], $matkul['tugas'], $matkul['uts'], $matkul['uas']));
-
-            list($grade, $mutu) = tentukanGradeDanMutu($nilaiAkhir);
-  
-            $bobot = $mutu * $matkul['sks'];
-      
-            $status = ($grade == 'E') ? "Gagal" : "Lulus";
-
-            $totalBobot += $bobot;
-            $totalSKS += $matkul['sks'];
-
-        
-            echo "<div class='row'><div class='label'>Nama Matakuliah ke-" . ($index + 1) . " :</div><div class='value'>" . $matkul['nama'] . "</div></div>";
-            echo "<div class='row'><div class='label'>SKS :</div><div class='value'>" . $matkul['sks'] . "</div></div>";
-            echo "<div class='row'><div class='label'>Kehadiran :</div><div class='value'>" . $matkul['hadir'] . "</div></div>";
-            echo "<div class='row'><div class='label'>Tugas :</div><div class='value'>" . $matkul['tugas'] . "</div></div>";
-            echo "<div class='row'><div class='label'>UTS :</div><div class='value'>" . $matkul['uts'] . "</div></div>";
-            echo "<div class='row'><div class='label'>UAS :</div><div class='value'>" . $matkul['uas'] . "</div></div>";
-            echo "<div class='row'><div class='label'>Nilai Akhir :</div><div class='value'>" . $nilaiAkhir . "</div></div>";
-            echo "<div class='row'><div class='label'>Grade :</div><div class='value'>" . $grade . "</div></div>";
-            echo "<div class='row'><div class='label'>Angka Mutu :</div><div class='value'>" . number_format($mutu, 2) . "</div></div>";
-            echo "<div class='row'><div class='label'>Bobot :</div><div class='value'>" . number_format($bobot, 2) . "</div></div>";
-            echo "<div class='row'><div class='label'>Status :</div><div class='value'>" . $status . "</div></div>";
-            echo "<hr>";
-        }
-
-        $IPK = ($totalSKS > 0) ? $totalBobot / $totalSKS : 0;
+  <?php
 
 
-        echo "<div id='total'>";
-        echo "<div class='row'><div class='label'>Total Bobot =</div><div class='value'>" . number_format($totalBobot, 2) . "</div></div>";
-        echo "<div class='row'><div class='label'>Total SKS =</div><div class='value'>" . $totalSKS . "</div></div>";
-        echo "<div class='row'><div class='label'>IPK =</div><div class='value'>" . number_format($IPK, 2) . "</div></div>";
-        echo "</div>";
-        ?>
-</html>
+$namaMatkul1 = "Matematika";
+$sksMatkul1 = 3;
+$nilaiHadir1 = 85;
+$nilaiTugas1 = 80;
+$nilaiUTS1 = 75;
+$nilaiUAS1 = 78;
+
+$namaMatkul2 = "Fisika";
+$sksMatkul2 = 4;
+$nilaiHadir2 = 65; 
+$nilaiTugas2 = 70;
+$nilaiUTS2 = 68;
+$nilaiUAS2 = 72;
+
+
+$namaMatkul3 = "Kimia";
+$sksMatkul3 = 2;
+$nilaiHadir3 = 90;
+$nilaiTugas3 = 85;
+$nilaiUTS3 = 88;
+$nilaiUAS3 = 92;
+
+$namaMatkul4 = "Biologi";
+$sksMatkul4 = 3;
+$nilaiHadir4 = 78;
+$nilaiTugas4 = 82;
+$nilaiUTS4 = 80;
+$nilaiUAS4 = 85;
+
+
+$namaMatkul5 = "Bahasa Inggris";
+$sksMatkul5 = 2;
+$nilaiHadir5 = 95;
+$nilaiTugas5 = 90;
+$nilaiUTS5 = 93;
+$nilaiUAS5 = 96;
+
+
+function hitungNilaiAkhir($hadir, $tugas, $uts, $uas) {
+    return (0.1 * $hadir) + (0.2 * $tugas) + (0.3 * $uts) + (0.4 * $uas);
+}
+
+function tentukanGrade($nilaiAkhir, $hadir) {
+    if ($hadir < 70) {
+        return 'E';
+    }
+    if ($nilaiAkhir >= 80) return 'A';
+    if ($nilaiAkhir >= 75) return 'A-';
+    if ($nilaiAkhir >= 70) return 'B+';
+    if ($nilaiAkhir >= 65) return 'B';
+    if ($nilaiAkhir >= 60) return 'B-';
+    if ($nilaiAkhir >= 55) return 'C+';
+    if ($nilaiAkhir >= 50) return 'C';
+    if ($nilaiAkhir >= 45) return 'C-';
+    if ($nilaiAkhir >= 40) return 'D';
+    return 'E';
+}
+
+function tentukanMutu($grade) {
+    switch ($grade) {
+        case 'A': return 4.0;
+        case 'A-': return 3.75;
+        case 'B+': return 3.5;
+        case 'B': return 3.0;
+        case 'B-': return 2.75;
+        case 'C+': return 2.5;
+        case 'C': return 2.0;
+        case 'C-': return 1.75;
+        case 'D': return 1.0;
+        case 'E': return 0.0;
+        default: return 0.0;
+    }
+}
+
+
+function tentukanStatus($grade) {
+    $lulusGrades = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-'];
+    return in_array($grade, $lulusGrades) ? 'LULUS' : 'GAGAL';
+}
+
+$matkul = [
+    1 => ['nama' => $namaMatkul1, 'sks' => $sksMatkul1, 'hadir' => $nilaiHadir1, 'tugas' => $nilaiTugas1, 'uts' => $nilaiUTS1, 'uas' => $nilaiUAS1],
+    2 => ['nama' => $namaMatkul2, 'sks' => $sksMatkul2, 'hadir' => $nilaiHadir2, 'tugas' => $nilaiTugas2, 'uts' => $nilaiUTS2, 'uas' => $nilaiUAS2],
+    3 => ['nama' => $namaMatkul3, 'sks' => $sksMatkul3, 'hadir' => $nilaiHadir3, 'tugas' => $nilaiTugas3, 'uts' => $nilaiUTS3, 'uas' => $nilaiUAS3],
+    4 => ['nama' => $namaMatkul4, 'sks' => $sksMatkul4, 'hadir' => $nilaiHadir4, 'tugas' => $nilaiTugas4, 'uts' => $nilaiUTS4, 'uas' => $nilaiUAS4],
+    5 => ['nama' => $namaMatkul5, 'sks' => $sksMatkul5, 'hadir' => $nilaiHadir5, 'tugas' => $nilaiTugas5, 'uts' => $nilaiUTS5, 'uas' => $nilaiUAS5],
+];
+
+$totalBobot = 0;
+$totalSKS = 0;
+
+for ($i = 1; $i <= 5; $i++) {
+    $nilaiAkhir = hitungNilaiAkhir($matkul[$i]['hadir'], $matkul[$i]['tugas'], $matkul[$i]['uts'], $matkul[$i]['uas']);
+    $grade = tentukanGrade($nilaiAkhir, $matkul[$i]['hadir']);
+    $mutu = tentukanMutu($grade);
+    $bobot = $mutu * $matkul[$i]['sks'];
+    $status = tentukanStatus($grade);
+
+    // Simpan hasil
+    ${"nilaiAkhir$i"} = $nilaiAkhir;
+    ${"grade$i"} = $grade;
+    ${"mutu$i"} = $mutu;
+    ${"bobot$i"} = $bobot;
+    ${"status$i"} = $status;
+
+    $totalBobot += $bobot;
+    $totalSKS += $matkul[$i]['sks'];
+}
+
+$IPK = $totalSKS > 0 ? $totalBobot / $totalSKS : 0;
+
+
+echo "<h2>Hasil Perhitungan</h2>";
+for ($i = 1; $i <= 5; $i++) {
+    echo "<p>Mata Kuliah $i: {$matkul[$i]['nama']}<br>";
+    echo "Nilai Akhir: " . ${"nilaiAkhir$i"} . "<br>";
+    echo "Grade: " . ${"grade$i"} . "<br>";
+    echo "Mutu: " . ${"mutu$i"} . "<br>";
+    echo "Bobot: " . ${"bobot$i"} . "<br>";
+    echo "Status: " . ${"status$i"} . "</p>";
+}
+echo "<p>Total Bobot: $totalBobot</p>";
+echo "<p>Total SKS: $totalSKS</p>";
+echo "<p>IPK: " . number_format($IPK, 2) . "</p>";
+
+
+echo "<section id='ipk'>";
+echo "<h3>Indeks Prestasi Kumulatif (IPK)</h3>";
+echo "<p>IPK Anda adalah: " . number_format($IPK, 2) . "</p>";
+echo "</section>";
+
+
+?>

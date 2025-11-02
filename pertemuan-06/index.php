@@ -371,7 +371,7 @@ for ($i = 1; $i <= 5; $i++) {
     $bobot = $mutu * $matkul[$i]['sks'];
     $status = tentukanStatus($grade);
 
-    // Simpan hasil
+    
     ${"nilaiAkhir$i"} = $nilaiAkhir;
     ${"grade$i"} = $grade;
     ${"mutu$i"} = $mutu;

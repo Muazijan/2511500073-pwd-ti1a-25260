@@ -269,10 +269,8 @@
             ?>
           </P>
   </section>
-
+  <section id="about">
   <?php
-
-
 $namaMatkul1 = "Matematika";
 $sksMatkul1 = 3;
 $nilaiHadir1 = 85;
@@ -406,3 +404,4 @@ echo "</section>";
 
 
 ?>
+<section>

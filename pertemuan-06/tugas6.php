@@ -1,5 +1,4 @@
 <?php
-// Definisi variabel input berdasarkan contoh (dalam praktik nyata, ini bisa diambil dari form atau database)
 $namaMatkul1 = "Algoritma dan Struktur Data";
 $sksMatkul1 = 4;
 $nilaiHadir1 = 90;
@@ -14,14 +13,14 @@ $nilaiTugas2 = 50;
 $nilaiUTS2 = 60;
 $nilaiUAS2 = 80;
 
-$namaMatkul3 = "Matematika"; // Asumsi untuk mencapai total
+$namaMatkul3 = "Matematika"; 
 $sksMatkul3 = 4;
 $nilaiHadir3 = 80;
 $nilaiTugas3 = 70;
 $nilaiUTS3 = 75;
 $nilaiUAS3 = 80;
 
-$namaMatkul4 = "Fisika"; // Asumsi untuk mencapai total
+$namaMatkul4 = "Fisika";
 $sksMatkul4 = 7;
 $nilaiHadir4 = 85;
 $nilaiTugas4 = 75;
@@ -35,12 +34,11 @@ $nilaiTugas5 = 80;
 $nilaiUTS5 = 90;
 $nilaiUAS5 = 100;
 
-// Fungsi untuk menghitung nilai akhir
+
 function hitungNilaiAkhir($hadir, $tugas, $uts, $uas) {
     return (0.1 * $hadir) + (0.2 * $tugas) + (0.3 * $uts) + (0.4 * $uas);
 }
 
-// Fungsi untuk menentukan grade
 function tentukanGrade($hadir, $nilaiAkhir) {
     if ($hadir < 70) {
         return "E";
@@ -67,7 +65,6 @@ function tentukanGrade($hadir, $nilaiAkhir) {
     }
 }
 
-// Fungsi untuk menentukan angka mutu
 function tentukanMutu($grade) {
     switch ($grade) {
         case "A": return 4.00;
@@ -84,7 +81,6 @@ function tentukanMutu($grade) {
     }
 }
 
-// Fungsi untuk menentukan status
 function tentukanStatus($grade) {
     if (in_array($grade, ["A", "A-", "B+", "B", "B-", "C+", "C", "C-"])) {
         return "Lulus";
@@ -93,7 +89,6 @@ function tentukanStatus($grade) {
     }
 }
 
-// Perhitungan untuk setiap mata kuliah
 for ($i = 1; $i <= 5; $i++) {
     $hadir = ${"nilaiHadir$i"};
     $tugas = ${"nilaiTugas$i"};
@@ -108,7 +103,6 @@ for ($i = 1; $i <= 5; $i++) {
     ${"status$i"} = tentukanStatus(${"grade$i"});
 }
 
-// Perhitungan total
 $totalBobot = $bobot1 + $bobot2 + $bobot3 + $bobot4 + $bobot5;
 $totalSKS = $sksMatkul1 + $sksMatkul2 + $sksMatkul3 + $sksMatkul4 + $sksMatkul5;
 $IPK = $totalSKS > 0 ? $totalBobot / $totalSKS : 0;
@@ -158,7 +152,7 @@ $IPK = $totalSKS > 0 ? $totalBobot / $totalSKS : 0;
 <body>
     <h2>Nilai Saya</h2>
 
-    <div class="section" id="ipk"> <!-- Section IPK dapat ditempatkan di sini atau di tempat lain -->
+    <div class="section" id="ipk">
         <div class="matkul">
             <div><span class="label">Nama Matakuliah ke-1 :</span> <span class="value"><?php echo $namaMatkul1; ?></span></div>
             <div><span class="label">SKS :</span> <span class="value"><?php echo $sksMatkul1; ?></span></div>

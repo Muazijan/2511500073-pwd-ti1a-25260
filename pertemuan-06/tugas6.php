@@ -1,274 +1,239 @@
-<style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
+<?php
+// Definisi variabel input berdasarkan contoh (dalam praktik nyata, ini bisa diambil dari form atau database)
+$namaMatkul1 = "Algoritma dan Struktur Data";
+$sksMatkul1 = 4;
+$nilaiHadir1 = 90;
+$nilaiTugas1 = 60;
+$nilaiUTS1 = 80;
+$nilaiUAS1 = 70;
 
-    
+$namaMatkul2 = "Agama";
+$sksMatkul2 = 2;
+$nilaiHadir2 = 70;
+$nilaiTugas2 = 50;
+$nilaiUTS2 = 60;
+$nilaiUAS2 = 80;
 
-    #about, #contact {
-      background-color: #7ca8fa;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 700px;
-      margin: 20px auto;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+$namaMatkul3 = "Matematika"; // Asumsi untuk mencapai total
+$sksMatkul3 = 4;
+$nilaiHadir3 = 80;
+$nilaiTugas3 = 70;
+$nilaiUTS3 = 75;
+$nilaiUAS3 = 80;
 
-    #about h2, #contact h2 {
-      color: #003366;
-      border-bottom: 2px solid #003366;
-      padding-bottom: 6px;
-      margin-top: 0;
-      margin-bottom: 16px;
-    }
-
-    #about p, #contact label {
-      display: flex;
-      justify-content: flex-start;
-      align-items: baseline;
-      margin: 0;
-      padding: 6px 0;
-      border-bottom: 1px solid #050505;
-    }
-
-    #about strong, #contact label > span {
-      min-width: 180px;
-      color: #080808;
-      font-weight: 600;
-      text-align: right;
-      padding-right: 16px;
-      flex-shrink: 0;
-    }
-
-    #contact input,
-    #contact textarea {
-      flex: 1;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 8px;
-      font-size: 14px;
-      box-sizing: border-box;
-      color: #000;
-    }
-
-    #contact button {
-      margin-top: 10px;
-      padding: 10px 24px;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      border: none;
-      margin-right: 8px;
-      transition: all 0.3s ease;
-    }
-
-    #contact button[type="submit"] {
-      background-color: #84eb24;
-      color: #fff;
-      font-weight: 600;
-    }
-
-    #contact button[type="reset"] {
-      background-color: #ec1010;
-      color: #272727;
-      font-weight: 500;
-    }
-
-    #contact button[type="submit"]:hover {
-      background-color: #0379ee;
-      transform: translateY(-1px);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    #contact button[type="reset"]:hover {
-      background-color: #cccccc;
-      transform: translateY(-1px);
-    }
-
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 12px 0;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      #about p,
-      #contact label {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      #about strong,
-      #contact label > span {
-        text-align: left;
-        padding-right: 0;
-        margin-bottom: 4px;
-      }
-
-      #contact input,
-      #contact textarea,
-      #contact button {
-        width: 100%;
-      }
-    } 
-
-    #contact {
-  background-image: url('maioo.gif'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 700px;
-  margin: 20px auto;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1;
-  color: #fff;
-}
-
-  </style>
-
-</P>
-  </section>
-  <section id="about">
-  <?php
-$namaMatkul1 = "Matematika";
-$sksMatkul1 = 3;
-$nilaiHadir1 = 85;
-$nilaiTugas1 = 80;
-$nilaiUTS1 = 75;
-$nilaiUAS1 = 78;
-
-$namaMatkul2 = "Fisika";
-$sksMatkul2 = 4;
-$nilaiHadir2 = 65; 
-$nilaiTugas2 = 70;
-$nilaiUTS2 = 68;
-$nilaiUAS2 = 72;
-
-
-$namaMatkul3 = "Kimia";
-$sksMatkul3 = 2;
-$nilaiHadir3 = 90;
-$nilaiTugas3 = 85;
-$nilaiUTS3 = 88;
-$nilaiUAS3 = 92;
-
-$namaMatkul4 = "Biologi";
-$sksMatkul4 = 3;
-$nilaiHadir4 = 78;
-$nilaiTugas4 = 82;
+$namaMatkul4 = "Fisika"; // Asumsi untuk mencapai total
+$sksMatkul4 = 7;
+$nilaiHadir4 = 85;
+$nilaiTugas4 = 75;
 $nilaiUTS4 = 80;
 $nilaiUAS4 = 85;
 
+$namaMatkul5 = "Pemrograman Web Dasar";
+$sksMatkul5 = 3;
+$nilaiHadir5 = 69;
+$nilaiTugas5 = 80;
+$nilaiUTS5 = 90;
+$nilaiUAS5 = 100;
 
-$namaMatkul5 = "Bahasa Inggris";
-$sksMatkul5 = 2;
-$nilaiHadir5 = 95;
-$nilaiTugas5 = 90;
-$nilaiUTS5 = 93;
-$nilaiUAS5 = 96;
-
-
+// Fungsi untuk menghitung nilai akhir
 function hitungNilaiAkhir($hadir, $tugas, $uts, $uas) {
     return (0.1 * $hadir) + (0.2 * $tugas) + (0.3 * $uts) + (0.4 * $uas);
 }
 
-function tentukanGrade($nilaiAkhir, $hadir) {
+// Fungsi untuk menentukan grade
+function tentukanGrade($hadir, $nilaiAkhir) {
     if ($hadir < 70) {
-        return 'E';
+        return "E";
+    } elseif ($nilaiAkhir >= 85) {
+        return "A";
+    } elseif ($nilaiAkhir >= 80) {
+        return "A-";
+    } elseif ($nilaiAkhir >= 75) {
+        return "B+";
+    } elseif ($nilaiAkhir >= 70) {
+        return "B";
+    } elseif ($nilaiAkhir >= 65) {
+        return "B-";
+    } elseif ($nilaiAkhir >= 60) {
+        return "C+";
+    } elseif ($nilaiAkhir >= 55) {
+        return "C";
+    } elseif ($nilaiAkhir >= 50) {
+        return "C-";
+    } elseif ($nilaiAkhir >= 45) {
+        return "D";
+    } else {
+        return "E";
     }
-    if ($nilaiAkhir >= 80) return 'A';
-    if ($nilaiAkhir >= 75) return 'A-';
-    if ($nilaiAkhir >= 70) return 'B+';
-    if ($nilaiAkhir >= 65) return 'B';
-    if ($nilaiAkhir >= 60) return 'B-';
-    if ($nilaiAkhir >= 55) return 'C+';
-    if ($nilaiAkhir >= 50) return 'C';
-    if ($nilaiAkhir >= 45) return 'C-';
-    if ($nilaiAkhir >= 40) return 'D';
-    return 'E';
 }
 
+// Fungsi untuk menentukan angka mutu
 function tentukanMutu($grade) {
     switch ($grade) {
-        case 'A': return 4.0;
-        case 'A-': return 3.75;
-        case 'B+': return 3.5;
-        case 'B': return 3.0;
-        case 'B-': return 2.75;
-        case 'C+': return 2.5;
-        case 'C': return 2.0;
-        case 'C-': return 1.75;
-        case 'D': return 1.0;
-        case 'E': return 0.0;
-        default: return 0.0;
+        case "A": return 4.00;
+        case "A-": return 3.70;
+        case "B+": return 3.30;
+        case "B": return 3.00;
+        case "B-": return 2.70;
+        case "C+": return 2.30;
+        case "C": return 2.00;
+        case "C-": return 1.70;
+        case "D": return 1.00;
+        case "E": return 0.00;
+        default: return 0.00;
     }
 }
 
-
+// Fungsi untuk menentukan status
 function tentukanStatus($grade) {
-    $lulusGrades = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-'];
-    return in_array($grade, $lulusGrades) ? 'LULUS' : 'GAGAL';
+    if (in_array($grade, ["A", "A-", "B+", "B", "B-", "C+", "C", "C-"])) {
+        return "Lulus";
+    } else {
+        return "Gagal";
+    }
 }
 
-$matkul = [
-    1 => ['nama' => $namaMatkul1, 'sks' => $sksMatkul1, 'hadir' => $nilaiHadir1, 'tugas' => $nilaiTugas1, 'uts' => $nilaiUTS1, 'uas' => $nilaiUAS1],
-    2 => ['nama' => $namaMatkul2, 'sks' => $sksMatkul2, 'hadir' => $nilaiHadir2, 'tugas' => $nilaiTugas2, 'uts' => $nilaiUTS2, 'uas' => $nilaiUAS2],
-    3 => ['nama' => $namaMatkul3, 'sks' => $sksMatkul3, 'hadir' => $nilaiHadir3, 'tugas' => $nilaiTugas3, 'uts' => $nilaiUTS3, 'uas' => $nilaiUAS3],
-    4 => ['nama' => $namaMatkul4, 'sks' => $sksMatkul4, 'hadir' => $nilaiHadir4, 'tugas' => $nilaiTugas4, 'uts' => $nilaiUTS4, 'uas' => $nilaiUAS4],
-    5 => ['nama' => $namaMatkul5, 'sks' => $sksMatkul5, 'hadir' => $nilaiHadir5, 'tugas' => $nilaiTugas5, 'uts' => $nilaiUTS5, 'uas' => $nilaiUAS5],
-];
-
-$totalBobot = 0;
-$totalSKS = 0;
-
+// Perhitungan untuk setiap mata kuliah
 for ($i = 1; $i <= 5; $i++) {
-    $nilaiAkhir = hitungNilaiAkhir($matkul[$i]['hadir'], $matkul[$i]['tugas'], $matkul[$i]['uts'], $matkul[$i]['uas']);
-    $grade = tentukanGrade($nilaiAkhir, $matkul[$i]['hadir']);
-    $mutu = tentukanMutu($grade);
-    $bobot = $mutu * $matkul[$i]['sks'];
-    $status = tentukanStatus($grade);
+    $hadir = ${"nilaiHadir$i"};
+    $tugas = ${"nilaiTugas$i"};
+    $uts = ${"nilaiUTS$i"};
+    $uas = ${"nilaiUAS$i"};
+    $sks = ${"sksMatkul$i"};
 
-    
-    ${"nilaiAkhir$i"} = $nilaiAkhir;
-    ${"grade$i"} = $grade;
-    ${"mutu$i"} = $mutu;
-    ${"bobot$i"} = $bobot;
-    ${"status$i"} = $status;
-
-    $totalBobot += $bobot;
-    $totalSKS += $matkul[$i]['sks'];
+    ${"nilaiAkhir$i"} = hitungNilaiAkhir($hadir, $tugas, $uts, $uas);
+    ${"grade$i"} = tentukanGrade($hadir, ${"nilaiAkhir$i"});
+    ${"mutu$i"} = tentukanMutu(${"grade$i"});
+    ${"bobot$i"} = ${"mutu$i"} * $sks;
+    ${"status$i"} = tentukanStatus(${"grade$i"});
 }
 
+// Perhitungan total
+$totalBobot = $bobot1 + $bobot2 + $bobot3 + $bobot4 + $bobot5;
+$totalSKS = $sksMatkul1 + $sksMatkul2 + $sksMatkul3 + $sksMatkul4 + $sksMatkul5;
 $IPK = $totalSKS > 0 ? $totalBobot / $totalSKS : 0;
-
-
-echo "<h2>Hasil Perhitungan</h2>";
-for ($i = 1; $i <= 5; $i++) {
-    echo "<p>Mata Kuliah $i: {$matkul[$i]['nama']}<br>";
-    echo "Nilai Akhir: " . ${"nilaiAkhir$i"} . "<br>";
-    echo "Grade: " . ${"grade$i"} . "<br>";
-    echo "Mutu: " . ${"mutu$i"} . "<br>";
-    echo "Bobot: " . ${"bobot$i"} . "<br>";
-    echo "Status: " . ${"status$i"} . "</p>";
-}
-echo "<p>Total Bobot: $totalBobot</p>";
-echo "<p>Total SKS: $totalSKS</p>";
-echo "<p>IPK: " . number_format($IPK, 2) . "</p>";
-
-
-echo "<section id='ipk'>";
-echo "<h3>Indeks Prestasi Kumulatif (IPK)</h3>";
-echo "<p>IPK Anda adalah: " . number_format($IPK, 2) . "</p>";
-echo "</section>";
-
-
 ?>
-<section>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilai Saya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .label {
+            text-align: right;
+            font-weight: bold;
+            width: 200px;
+            display: inline-block;
+        }
+        .value {
+            text-align: left;
+            display: inline-block;
+        }
+        .matkul {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Nilai Saya</h2>
+
+    <div class="section" id="ipk"> <!-- Section IPK dapat ditempatkan di sini atau di tempat lain -->
+        <div class="matkul">
+            <div><span class="label">Nama Matakuliah ke-1 :</span> <span class="value"><?php echo $namaMatkul1; ?></span></div>
+            <div><span class="label">SKS :</span> <span class="value"><?php echo $sksMatkul1; ?></span></div>
+            <div><span class="label">Kehadiran :</span> <span class="value"><?php echo $nilaiHadir1; ?></span></div>
+            <div><span class="label">Tugas :</span> <span class="value"><?php echo $nilaiTugas1; ?></span></div>
+            <div><span class="label">UTS :</span> <span class="value"><?php echo $nilaiUTS1; ?></span></div>
+            <div><span class="label">UAS :</span> <span class="value"><?php echo $nilaiUAS1; ?></span></div>
+            <div><span class="label">Nilai Akhir :</span> <span class="value"><?php echo number_format($nilaiAkhir1, 2); ?></span></div>
+            <div><span class="label">Grade :</span> <span class="value"><?php echo $grade1; ?></span></div>
+            <div><span class="label">Angka Mutu :</span> <span class="value"><?php echo number_format($mutu1, 2); ?></span></div>
+            <div><span class="label">Bobot :</span> <span class="value"><?php echo number_format($bobot1, 2); ?></span></div>
+            <div><span class="label">Status :</span> <span class="value"><?php echo $status1; ?></span></div>
+        </div>
+
+        <div class="matkul">
+            <div><span class="label">Nama Matakuliah ke-2 :</span> <span class="value"><?php echo $namaMatkul2; ?></span></div>
+            <div><span class="label">SKS :</span> <span class="value"><?php echo $sksMatkul2; ?></span></div>
+            <div><span class="label">Kehadiran :</span> <span class="value"><?php echo $nilaiHadir2; ?></span></div>
+            <div><span class="label">Tugas :</span> <span class="value"><?php echo $nilaiTugas2; ?></span></div>
+            <div><span class="label">UTS :</span> <span class="value"><?php echo $nilaiUTS2; ?></span></div>
+            <div><span class="label">UAS :</span> <span class="value"><?php echo $nilaiUAS2; ?></span></div>
+            <div><span class="label">Nilai Akhir :</span> <span class="value"><?php echo number_format($nilaiAkhir2, 2); ?></span></div>
+            <div><span class="label">Grade :</span> <span class="value"><?php echo $grade2; ?></span></div>
+            <div><span class="label">Angka Mutu :</span> <span class="value"><?php echo number_format($mutu2, 2); ?></span></div>
+            <div><span class="label">Bobot :</span> <span class="value"><?php echo number_format($bobot2, 2); ?></span></div>
+            <div><span class="label">Status :</span> <span class="value"><?php echo $status2; ?></span></div>
+        </div>
+
+        <div class="matkul">
+            <div><span class="label">Nama Matakuliah ke-3 :</span> <span class="value"><?php echo $namaMatkul3; ?></span></div>
+            <div><span class="label">SKS :</span> <span class="value"><?php echo $sksMatkul3; ?></span></div>
+            <div><span class="label">Kehadiran :</span> <span class="value"><?php echo $nilaiHadir3; ?></span></div>
+            <div><span class="label">Tugas :</span> <span class="value"><?php echo $nilaiTugas3; ?></span></div>
+            <div><span class="label">UTS :</span> <span class="value"><?php echo $nilaiUTS3; ?></span></div>
+            <div><span class="label">UAS :</span> <span class="value"><?php echo $nilaiUAS3; ?></span></div>
+            <div><span class="label">Nilai Akhir :</span> <span class="value"><?php echo number_format($nilaiAkhir3, 2); ?></span></div>
+            <div><span class="label">Grade :</span> <span class="value"><?php echo $grade3; ?></span></div>
+            <div><span class="label">Angka Mutu :</span> <span class="value"><?php echo number_format($mutu3, 2); ?></span></div>
+            <div><span class="label">Bobot :</span> <span class="value"><?php echo number_format($bobot3, 2); ?></span></div>
+            <div><span class="label">Status :</span> <span class="value"><?php echo $status3; ?></span></div>
+        </div>
+
+        <div class="matkul">
+            <div><span class="label">Nama Matakuliah ke-4 :</span> <span class="value"><?php echo $namaMatkul4; ?></span></div>
+            <div><span class="label">SKS :</span> <span class="value"><?php echo $sksMatkul4; ?></span></div>
+            <div><span class="label">Kehadiran :</span> <span class="value"><?php echo $nilaiHadir4; ?></span></div>
+            <div><span class="label">Tugas :</span> <span class="value"><?php echo $nilaiTugas4; ?></span></div>
+            <div><span class="label">UTS :</span> <span class="value"><?php echo $nilaiUTS4; ?></span></div>
+            <div><span class="label">UAS :</span> <span class="value"><?php echo $nilaiUAS4; ?></span></div>
+            <div><span class="label">Nilai Akhir :</span> <span class="value"><?php echo number_format($nilaiAkhir4, 2); ?></span></div>
+            <div><span class="label">Grade :</span> <span class="value"><?php echo $grade4; ?></span></div>
+            <div><span class="label">Angka Mutu :</span> <span class="value"><?php echo number_format($mutu4, 2); ?></span></div>
+            <div><span class="label">Bobot :</span> <span class="value"><?php echo number_format($bobot4, 2); ?></span></div>
+            <div><span class="label">Status :</span> <span class="value"><?php echo $status4; ?></span></div>
+        </div>
+
+        <div class="matkul">
+            <div><span class="label">Nama Matakuliah ke-5 :</span> <span class="value"><?php echo $namaMatkul5; ?></span></div>
+            <div><span class="label">SKS :</span> <span class="value"><?php echo $sksMatkul5; ?></span></div>
+            <div><span class="label">Kehadiran :</span> <span class="value"><?php echo $nilaiHadir5; ?></span></div>
+            <div><span class="label">Tugas :</span> <span class="value"><?php echo $nilaiTugas5; ?></span></div>
+            <div><span class="label">UTS :</span> <span class="value"><?php echo $nilaiUTS5; ?></span></div>
+            <div><span class="label">UAS :</span> <span class="value"><?php echo $nilaiUAS5; ?></span></div>
+            <div><span class="label">Nilai Akhir :</span> <span class="value"><?php echo number_format($nilaiAkhir5, 2); ?></span></div>
+            <div><span class="label">Grade :</span> <span class="value"><?php echo $grade5; ?></span></div>
+            <div><span class="label">Angka Mutu :</span> <span class="value"><?php echo number_format($mutu5, 2); ?></span></div>
+            <div><span class="label">Bobot :</span> <span class="value"><?php echo number_format($bobot5, 2); ?></span></div>
+            <div><span class="label">Status :</span> <span class="value"><?php echo $status5; ?></span></div>
+        </div>
+    </div>
+
+    <div class="total">
+        <div><span class="label">Total Bobot :</span> <span class="value"><?php echo number_format($totalBobot, 2); ?></span></div>
+        <div><span class="label">Total SKS :</span> <span class="value"><?php echo $totalSKS; ?></span></div>
+        <div><span class="label">IPK :</span> <span class="value"><?php echo number_format($IPK, 2); ?></span></div>
+    </div>
+</body>
+</html>

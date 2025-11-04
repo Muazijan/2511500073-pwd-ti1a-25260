@@ -267,5 +267,3 @@
             <?php
             echo "$Nama_adik"; 
             ?>
-
-

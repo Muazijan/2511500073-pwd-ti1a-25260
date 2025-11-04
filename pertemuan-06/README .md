@@ -5,10 +5,11 @@ hari ini kamis 30 oktober 2025
 <br>Nama: muazijan pratama</br>
 <ol>
     <li>skrip php hello word</li>
-    <li>menambahkan nama, umur, tinggi, hobi</li>
-     <li>menambahkan variabel</li>
-      <li>membuat menu pilihan pada about</li>
-       <li>membuat algoritma dan sruktur data</li>
+    <li>menambahkan identitas menjadi script php</li>
+    <li>menambahkan variabel</li>
+    <li>membuat menu pilihan pada about</li>
+    <li>menambahkan style</li>
+    <li>membuat algoritma dan sruktur data</li>
       
     
 </ol>

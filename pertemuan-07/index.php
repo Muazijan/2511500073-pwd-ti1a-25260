@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-
-
 <?php
 session_start();
-
 $sesemail = $_SESSION["txtEmail"] ?? "";
 $sespesan = $_SESSION["txtPesan"] ?? "";
 $sesnim = $_SESSION["sesnim"] ?? "";
@@ -40,6 +34,7 @@ $sesnamaadik = $_SESSION["txtnamaadik"] ?? "";
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#contact">Kontak</a></li>
+      
       </ul>
     </nav>
   </header>
@@ -103,11 +98,12 @@ $sesnamaadik = $_SESSION["txtnamaadik"] ?? "";
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
+</section>
 
 
 
 
-  <br><section id="ulangan"></br>
+  <section id="contact">
       <br><h2>Ubah di sini</h2></br>
       <form action="ulangan.php" method="POST">
 

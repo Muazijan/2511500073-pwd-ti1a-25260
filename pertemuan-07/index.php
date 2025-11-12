@@ -2,8 +2,6 @@
 <html lang="en">
 <?php
 session_start();
-$sesemail = $_SESSION["txtEmail"] ?? "";
-$sespesan = $_SESSION["txtPesan"] ?? "";
 $sesnim = $_SESSION["sesnim"] ?? "";
 $sesnama = $_SESSION["txtnamalengkap"] ?? "";  
 $sestempatlahir = $_SESSION["txttempatlahir"] ?? "";
@@ -14,7 +12,10 @@ $sespekerjaan = $_SESSION["txtpekerjaan"] ?? "";
 $sesnamaortu = $_SESSION["txtnamaortu"] ?? "";
 $sesnamakakak = $_SESSION["txtnamakakak"] ?? "";
 $sesnamaadik = $_SESSION["txtnamaadik"] ?? "";
+
 ?>
+
+
 
 <head>
   <meta charset="UTF-8">
@@ -79,24 +80,27 @@ $sesnamaadik = $_SESSION["txtnamaadik"] ?? "";
 
     <section id="contact">
       <h2>Kontak Kami</h2>
-      <form action="  " method="POST">
+      <form action=" proses.php " method="POST">
 
         <label for="txtnama"><span>Nama:</span>
-          <input type="text" id="txtnama" name="txtnama" placeholder="Masukkan nama" required autocomplete="name">
+          <input type="text" id="sesnamaaku" name="txtnamaaku" placeholder="Masukkan nama" required autocomplete="name">
         </label>
 
         <label for="txtEmail"><span>Email:</span>
-          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+          <input type="email" id="sesEmailaku" name="txtEmailaku" placeholder="Masukkan email" required autocomplete="email">
         </label>
 
         <label for="txtPesan"><span>Pesan Anda:</span>
-          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+          <textarea id="txtPesan" name="sesPesanaku" rows="4" placeholder="Tulis pesan anda..." required></textarea>
           <small id="charCount">0/200 karakter</small>
         </label>
 
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
+
+
+
       </form>
 </section>
 

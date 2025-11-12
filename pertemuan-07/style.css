@@ -8,6 +8,7 @@ body {
   background: #f5f5f5;
   color: #333;
   line-height: 1.5;
+  background-image: url(BATU.jpg );
 }
 
 header {
@@ -68,13 +69,16 @@ header li a:active {
   max-width: 700px;
   margin: 20px auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-image: url(    );
+  background: size 10   px; ;
+  background-position: center;
 }
 
 #home h2,
 #about h2,
 #contact h2 {
   color: #003366;
-  border-bottom: 2px solid #003366;
+  border-bottom: 2px solid #030303;
   padding-bottom: 6px;
   margin-top: 0;
   margin-bottom: 16px;
@@ -97,7 +101,7 @@ header li a:active {
 #about strong,
 #contact label>span {
   min-width: 180px;
-  color: #003366;
+  color: #0f0f0f;
   font-weight: 600;
   text-align: right;
   padding-right: 16px;

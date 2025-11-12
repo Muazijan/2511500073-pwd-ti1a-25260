@@ -13,10 +13,3 @@ header("location: index.php");
 
 
 
-
-<?php
-session_start();
-$sesnama=$_SESSION["sesnama"];
-$sesemail=$_SESSION["txtEmai"];
-$sespesan=$_SESSION["txtPesan"];
-?>

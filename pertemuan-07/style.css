@@ -72,6 +72,9 @@ header li a:active {
   background-image: url(    );
   background: size 10   px; ;
   background-position: center;
+  background-image: url(logoisbal.png );
+  background-size: 150px 150px;
+  background-repeat: no-repeat;
 }
 
 #home h2,
@@ -157,7 +160,7 @@ header li a:active {
 
 footer {
   background-image: url( maioo.gif);
-  color: #131212;
+  color: #050505;
   text-align: center;
   padding: 10px;
 }

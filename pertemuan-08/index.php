@@ -50,62 +50,8 @@ $sesnamaadik = $_SESSION["txtnamaadik"] ?? "";
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-    <section id="about">
-      <?php
-          $nim = "2511500073&hearts;";
-          $Nama_Lengkap = "Muazijan pratama&hearts;";
-          $Tempat_Lahir = "Pangkalpinang&hearts;";
-          $Tanggal_Lahir = "12-01-2007&hearts;";
-          $hobi = "Membaca novel";
-          $Pasangan = "pasangan saya tidak punya alias jomblo&hearts;";
-          $Pekerjaan = "Untuk pekerjaan saya. Saya adalah seorang freelance fotografer wedding&hearts;";
-          $Nama_orang_tua ="Nama Ayah saya adalah MARSITO dan Nama Ibu saya KURNIASARI&hearts;";
-          $Nama_kakak = "Kebetulan saya adalah kakak dari kedua adik saya&hearts;";
-          $Nama_adik = "AMANDA DWI RIZKI DAN HUMAIRA SALSABILA&hearts;";
-      ?>
 
-      <h2>Tentang Saya</h2>
-      <p><strong>NIM:</strong><?php echo $sesnim?> </p>
-      <p><strong>Nama Lengkap:</strong><?php echo $sesnama?></p>
-      <p><strong>Tempat Lahir:</strong><?php echo $sestempatlahir?></p>
-      <p><strong>Tanggal Lahir:</strong> <?php echo $sestanggallahir?></p>
-      <p><strong>Hobi:</strong><?php echo $seshobi?></p>
-      <p><strong>Pasangan:</strong> <?php echo $sespasangan ?></p>
-      <p><strong>Pekerjaan:</strong><?php echo $sespekerjaan?></p>
-      <p><strong>Nama Orang Tua:</strong> <?php echo $sesnamaortu?></p>
-      <p><strong>Nama Kakak:</strong> <?php echo $sesnamakakak?></p>
-      <p><strong>Nama Adik:</strong> <?php echo $sesnamaadik?></p>
-    </section>
-
-
-    <section id="contact">
-      <h2>Kontak Kami</h2>
-      <form action=" " method="POST">
-
-        <label for="txtnama"><span>Nama:</span>
-          <input type="text" id="sesnamaaku" name="txtnamaaku" placeholder="Masukkan nama" required autocomplete="name">
-        </label>
-
-        <label for="txtEmail"><span>Email:</span>
-          <input type="email" id="sesEmailaku" name="txtEmailaku" placeholder="Masukkan email" required autocomplete="email">
-        </label>
-
-        <label for="txtPesan"><span>Pesan Anda:</span>
-          <textarea id="txtPesan" name="sesPesanaku" rows="4" placeholder="Tulis pesan anda..." required></textarea>
-          <small id="charCount">0/200 karakter</small>
-        </label>
-
-
-        <button type="submit">Kirim</button>
-        <button type="reset">Batal</button>
-
-
-
-      </form>
-</section>
-
-
-
+    
 
   <section id="contact">
       <br><h2>Biodata Sederhana Mahasiswa</h2></br>
@@ -162,6 +108,63 @@ $sesnamaadik = $_SESSION["txtnamaadik"] ?? "";
       
 
     </section>
+
+    <section id="about">
+      <?php
+          $nim = "2511500073&hearts;";
+          $Nama_Lengkap = "Muazijan pratama&hearts;";
+          $Tempat_Lahir = "Pangkalpinang&hearts;";
+          $Tanggal_Lahir = "12-01-2007&hearts;";
+          $hobi = "Membaca novel";
+          $Pasangan = "pasangan saya tidak punya alias jomblo&hearts;";
+          $Pekerjaan = "Untuk pekerjaan saya. Saya adalah seorang freelance fotografer wedding&hearts;";
+          $Nama_orang_tua ="Nama Ayah saya adalah MARSITO dan Nama Ibu saya KURNIASARI&hearts;";
+          $Nama_kakak = "Kebetulan saya adalah kakak dari kedua adik saya&hearts;";
+          $Nama_adik = "AMANDA DWI RIZKI DAN HUMAIRA SALSABILA&hearts;";
+      ?>
+
+      <h2>Tentang Saya</h2>
+      <p><strong>NIM:</strong><?php echo $sesnim?> </p>
+      <p><strong>Nama Lengkap:</strong><?php echo $sesnama?></p>
+      <p><strong>Tempat Lahir:</strong><?php echo $sestempatlahir?></p>
+      <p><strong>Tanggal Lahir:</strong> <?php echo $sestanggallahir?></p>
+      <p><strong>Hobi:</strong><?php echo $seshobi?></p>
+      <p><strong>Pasangan:</strong> <?php echo $sespasangan ?></p>
+      <p><strong>Pekerjaan:</strong><?php echo $sespekerjaan?></p>
+      <p><strong>Nama Orang Tua:</strong> <?php echo $sesnamaortu?></p>
+      <p><strong>Nama Kakak:</strong> <?php echo $sesnamakakak?></p>
+      <p><strong>Nama Adik:</strong> <?php echo $sesnamaadik?></p>
+    </section>
+
+
+    <section id="contact">
+      <h2>Kontak Kami</h2>
+      <form action=" " method="POST">
+
+        <label for="txtnama"><span>Nama:</span>
+          <input type="text" id="sesnamaaku" name="txtnamaaku" placeholder="Masukkan nama" required autocomplete="name">
+        </label>
+
+        <label for="txtEmail"><span>Email:</span>
+          <input type="email" id="sesEmailaku" name="txtEmailaku" placeholder="Masukkan email" required autocomplete="email">
+        </label>
+
+        <label for="txtPesan"><span>Pesan Anda:</span>
+          <textarea id="txtPesan" name="sesPesanaku" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+
+
+
+      </form>
+</section>
+
+
+
   </main>
 
   <footer>

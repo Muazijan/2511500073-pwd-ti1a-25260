@@ -15,3 +15,4 @@ hari ini kamis 13 november 2025S
      <li>redirect ke index.php</li>
      <li>pada section id about ditentang saya lakukan echo sesuai nama fariabel yang telah kita buat</li>
      <li>membuat section baru Entry Data Mahasiswa</li>
+     <li>membuat form dengan id sesuai yang kita buat di sesion</li>

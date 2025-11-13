@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background: #003366;
+  background-image: url(maioo.gif );
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -156,8 +156,8 @@ header li a:active {
 }
 
 footer {
-  background: #222;
-  color: #aaa;
+  background-image: url( maioo.gif);
+  color: #131212;
   text-align: center;
   padding: 10px;
 }

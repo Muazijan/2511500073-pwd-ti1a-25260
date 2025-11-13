@@ -80,7 +80,7 @@ $sesnamaadik = $_SESSION["txtnamaadik"] ?? "";
 
     <section id="contact">
       <h2>Kontak Kami</h2>
-      <form action=" proses.php " method="POST">
+      <form action=" " method="POST">
 
         <label for="txtnama"><span>Nama:</span>
           <input type="text" id="sesnamaaku" name="txtnamaaku" placeholder="Masukkan nama" required autocomplete="name">
@@ -112,44 +112,44 @@ $sesnamaadik = $_SESSION["txtnamaadik"] ?? "";
       <form action="ulangan.php" method="POST">
 
         <label for="txtnim"><span>NIM:</span>
-          <input type="Nim" id="txtnim" name="txtnim" placeholder="ubah di sini........." required autocomplete="nim">
+          <input type="Nim" id="txtnim" name="txtnim" placeholder="isi nim anda........." required autocomplete="nim">
         </label>
 
         <label for="txtnamalengkap"><span>Nama Lengkap:</span>
-          <input type="Nama" id="txtnamalengkap" name="txtnamalengkap" placeholder="ubah di sini........." required autocomplete="nama">
+          <input type="Nama" id="txtnamalengkap" name="txtnamalengkap" placeholder="isi nama lengkap anda........." required autocomplete="nama">
         </label>
 
         <label for="txttempatlahir"><span>Tempat Lahir:</span>
-          <input type="Tempat lahir" id="txttempatlahir" name="txttempatlahir" placeholder="ubah di sini........." required autocomplete="email">
+          <input type="Tempat lahir" id="txttempatlahir" name="txttempatlahir" placeholder="isi tempat lahir anda........." required autocomplete="email">
         </label>
 
         <label for="txttanggallahir"><span>Tanggal Lahir:</span>
-          <input type="Tanggal lahir" id="txttanggallahir" name="txttanggallahir" placeholder="ubah di sini........." required autocomplete="email">
+          <input type="Tanggal lahir" id="txttanggallahir" name="txttanggallahir" placeholder="isi tanggal lahir anda........." required autocomplete="email">
         </label>
 
         <label for="txthobi"><span>Hobi:</span>
-          <input type="hobi" id="txthobi" name="txthobi" placeholder="ubah di sini........." required autocomplete="email">
+          <input type="hobi" id="txthobi" name="txthobi" placeholder="isi hobi anda........." required autocomplete="email">
         </label>
 
         <label for="txtpasangan"><span>Pasangan:</span>
-          <input type="pasangan" id="txtpasangan" name="txtpasangan" placeholder="ubah di sini........." required autocomplete="email">
+          <input type="pasangan" id="txtpasangan" name="txtpasangan" placeholder="isi pasangan anda kalau ada........." required autocomplete="email">
         </label>
 
         
         <label for="txtpekerjaan"><span>Pekerjaan:</span>
-          <input type="pekerjaan" id="txtpekerjaan" name="txtpekerjaan" placeholder="ubah di sini........." required autocomplete="email">
+          <input type="pekerjaan" id="txtpekerjaan" name="txtpekerjaan" placeholder="isi pekerjaan anda........." required autocomplete="email">
         </label>
 
         <label for="txtnamaortu"><span>Nama Orang Tua:</span>
-          <input type="nama orang tua" id="txtnamaortu" name="txtnamaortu" placeholder="ubah di sini........." required autocomplete="email">
+          <input type="nama orang tua" id="txtnamaortu" name="txtnamaortu" placeholder="isi nama orang tua anda........." required autocomplete="email">
         </label>
 
         <label for="txtnamakakak"><span>Nama Kakak:</span>
-          <input type="nama kakak" id="txtnamakakak" name="txtnamakakak" placeholder="ubah di sini........." required autocomplete="email">
+          <input type="nama kakak" id="txtnamakakak" name="txtnamakakak" placeholder="isi nama kakak anda........." required autocomplete="email">
         </label>
 
         <label for="txtnamaadik"><span>Nama Adik:</span>
-          <input type="nama adik" id="txtnamadik" name="txtnamaadik" placeholder="ubah di sini........." required autocomplete="email">
+          <input type="nama adik" id="txtnamadik" name="txtnamaadik" placeholder="isi nama adik anda........." required autocomplete="email">
         </label>
 
   

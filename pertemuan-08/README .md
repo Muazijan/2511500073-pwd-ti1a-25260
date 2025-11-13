@@ -13,3 +13,4 @@ hari ini kamis 13 november 2025S
      <li>menyimpan nilai input ke variabel</li>
      <li>sesion index.php dan ulangan.php</li>
      <li>redirect ke index.php</li>
+     <li>pada section id about ditentang saya lakukan echo sesuai nama fariabel yang telah kita buat</li>

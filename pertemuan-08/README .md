@@ -16,3 +16,4 @@ hari ini kamis 13 november 2025S
      <li>pada section id about ditentang saya lakukan echo sesuai nama fariabel yang telah kita buat</li>
      <li>membuat section baru Entry Data Mahasiswa</li>
      <li>membuat form dengan id sesuai yang kita buat di sesion</li>
+     <li>jadi pada Entry Data Mahasiswa apapun yang kita ketik pada table yg kita buat akan muncul di tentang saya sesuai sesion yang kita echo</li>

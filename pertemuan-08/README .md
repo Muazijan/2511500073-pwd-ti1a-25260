@@ -1,1 +1,9 @@
 # pertemuan-08
+
+
+hari ini kamis 13 november 2025S
+<br>Nim: 2511500073</br>
+<br>Nama: muazijan pratama</br>
+<ol>
+    <li>download file zip di elearning</li>
+    <li>menambahkan  action="ulangan.php" method="POST"</li>

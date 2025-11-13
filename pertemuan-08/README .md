@@ -11,3 +11,4 @@ hari ini kamis 13 november 2025S
      <li>membuat file ulangan.php</li>
      <li>mengambil nilai input dari form ke ulangan</li>
      <li>menyimpan nilai input ke variabel</li>
+     <li>sesion index.php dan ulangan.php</li>

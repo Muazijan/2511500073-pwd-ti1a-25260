@@ -20,3 +20,6 @@ hari ini kamis 13 november 2025S
      <li>melakukan styling header dan footer</li>
      <li>melakuakan styling pada baground website</li>
      <li>menambahkan gambar pada setiap section</li>
+       <li></li>
+    
+</ol>

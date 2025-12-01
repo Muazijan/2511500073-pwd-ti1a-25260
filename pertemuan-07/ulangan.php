@@ -22,5 +22,4 @@
      $_SESSION["txtnamaadik"] = $sesnamaadik;
      header("Location: index.php");
      exit();
-     ?>
-     
+

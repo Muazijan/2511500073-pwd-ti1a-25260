@@ -7,7 +7,7 @@ hari ini tanggal 4 desember 2025
   <li>buat file baru dengan nama read.php</li>
   <li>melakukan pengisian data atau record untuk tabel tbl_tamu.</li>
   <li>membuat file read_inc.php.</li>
-  <li></li>
+  <li>merubah code pada baris 146</li>
   <li></li>
   <li></li>
   <li></li>

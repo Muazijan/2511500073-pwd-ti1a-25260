@@ -106,7 +106,7 @@ $fieldConfig = [
 ?>
     <section id="about">
       <h2>Tentang Saya</h2>
-      <?= tampilkanBiodata($fieldConfig, $biodata) ?>
+      <?php include 'read_inc.php'; ?>
     </section>
 
     <section id="contact">
@@ -137,7 +137,6 @@ $fieldConfig = [
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
-
 
 
     </section>

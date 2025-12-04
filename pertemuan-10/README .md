@@ -6,7 +6,7 @@ hari ini tanggal 4 desember 2025
   <li>membuat tabel tbl_tamu di dalam database db_pwd2025.</li>
   <li>buat file baru dengan nama read.php</li>
   <li>melakukan pengisian data atau record untuk tabel tbl_tamu.</li>
-  <li></li>
+  <li>membuat file read_inc.php.</li>
   <li></li>
   <li></li>
   <li></li>

@@ -8,17 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     $_SESSION['flash_error'] = 'Akses tidak valid.';
     redirect_ke('index.php#contact');
 }
-if(strlen(trim($_POST['nama'])) < 3){
-    die("Nama minimal 3 karakter!");
-}
-
-if(strlen(trim($_POST['pesan'])) < 10){
-    die("Pesan minimal 10 karakter!");
-}
-if($_POST['captcha'] != 5){
-    die("Captcha salah! Jawaban harus 5.");
-}
-
 $nama = bersihkan($_POST['txtNama'] ?? '');
 $email = bersihkan($_POST['txtEmail'] ?? '');
 $pesan = bersihkan($_POST['txtPesan'] ?? '');

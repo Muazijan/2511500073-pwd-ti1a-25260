@@ -1,5 +1,5 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 
 require_once __DIR__ . '/fungsi.php';
 ?>
@@ -113,7 +113,7 @@ $fieldConfig = [
       <h2>Kontak Kami</h2>
       <form action="proses.php" method="POST">
       <?php 
-session_start();
+
 $msg = $_SESSION["msg"] ?? "";
 unset($_SESSION["msg"]);
 ?>
@@ -149,8 +149,8 @@ unset($_SESSION["msg"]);
     </section>
   </main>
   <?php
-session_start();
-require_once 'functions.php';
+
+require_once 'fungsi.php';
 ?>
 <!doctype html>
 <html>

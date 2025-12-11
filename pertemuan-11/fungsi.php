@@ -1,30 +1,21 @@
 <?php
-if (!function_exists('redirect')) {
-    function redirect($url) {
-        header("Location: $url");
-        exit;
-    }
+function bersihkan($str)
+{
+    return htmlspecialchars(trim($str));
+}
+function tidakKosong($str)
+{
+    return strlen(trim($str)) > 0;
 }
 
-if (!function_exists('bersihkan')) {
-    function bersihkan($str) {
-        return htmlspecialchars(trim($str));
-    }
+function tampilkanBiodata($conf, $arr)
+{
+$html = "";
+foreach ($conf as $k => $v) {
+$label = $v["label"];
+$nilai = bersihkan($arr[$k] ?? '');
+$suffix = $v["suffix"];
+$html .= "<p><strong>{$label}</strong> {$nilai}{$suffix}</p>";
 }
-
-if (!function_exists('tampilkanBiodata')) {
-    function tampilkanBiodata($conf, $arr) {
-        $html = "<dl>";
-        foreach ($conf as $key => $meta) {
-            $val = $arr[$key] ?? "";
-            $label = $meta['label'] ?? $key;
-            $suffix = $meta['suffix'] ?? '';
-            $html .= "<dt>{$label}</dt><dd>" . htmlspecialchars($val) . " {$suffix}</dd>";
-        }
-        $html .= "</dl>";
-        return $html;
-        
-    }
-    require_once 'fungsi.php';
-
+return $html;
 }

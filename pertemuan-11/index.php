@@ -1,5 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) { session_start(); }
+session_start();
 
 require_once __DIR__ . '/fungsi.php';
 ?>
@@ -112,20 +112,6 @@ $fieldConfig = [
     <section id="contact">
       <h2>Kontak Kami</h2>
       <form action="proses.php" method="POST">
-      <?php 
-
-$msg = $_SESSION["msg"] ?? "";
-unset($_SESSION["msg"]);
-?>
-<?php if ($msg): ?>
-    <div class="alert">
-        <?= $msg ?>
-    </div>
-<?php endif; ?>
-<input type="text" name="txtNama" value="<?= $_SESSION['old']['nama'] ?? '' ?>">
-<input type="email" name="txtEmail" value="<?= $_SESSION['old']['email'] ?? '' ?>">
-<textarea name="txtPesan"><?= $_SESSION['old']['pesan'] ?? '' ?></textarea>
-
 
         <label for="txtNama"><span>Nama:</span>
           <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
@@ -148,51 +134,6 @@ unset($_SESSION["msg"]);
 
     </section>
   </main>
-  <?php
-
-require_once 'fungsi.php';
-?>
-<!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Contact</title></head>
-<body>
-  <h1>Form Contact</h1>
-
- 
-  <?php if (!empty($_SESSION['msg'])): ?>
-    <div style="padding:8px;border:1px solid #333;margin-bottom:10px;">
-      <?= $_SESSION['msg']; ?>
-    </div>
-    <?php unset($_SESSION['msg']); ?>
-  <?php endif; ?>
-
-  <form action="proses.php" method="POST" id="contact">
-    <label>Nama:<br>
-      <input type="text" name="txtNama" value="<?= htmlspecialchars($_SESSION['old']['nama'] ?? '') ?>">
-    </label><br>
-    <label>Email:<br>
-      <input type="email" name="txtEmail" value="<?= htmlspecialchars($_SESSION['old']['email'] ?? '') ?>">
-    </label><br>
-    <label>Pesan:<br>
-      <textarea name="txtPesan"><?= htmlspecialchars($_SESSION['old']['pesan'] ?? '') ?></textarea>
-    </label><br>
-    <button type="submit">Kirim</button>
-  </form>
-
-  <?php
-
-  if (isset($_SESSION['old'])) {
-   
-  }
-  ?>
-
-  <hr>
-  <h2>Daftar Tamu</h2>
-  <?php include 'read_inc.php'; ?>
-
-</body>
-</html>
-
 
   <footer>
     <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>

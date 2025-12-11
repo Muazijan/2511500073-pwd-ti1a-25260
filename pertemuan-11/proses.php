@@ -1,11 +1,14 @@
 <?php
 session_start();
-require 'fungsi.php'; 
+
+require 'fungsi.php';
+require 'koneksi.php';
+
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     $_SESSION['flash_error'] = 'Akses tidak valid.';
     redirect_ke('index.php#contact');
 }
-$nama  = bersihkan($_POST['txtNama'] ?? '');
+$nama = bersihkan($_POST['txtNama'] ?? '');
 $email = bersihkan($_POST['txtEmail'] ?? '');
 $pesan = bersihkan($_POST['txtPesan'] ?? '');
 $errors = [];
@@ -22,30 +25,29 @@ if ($pesan === '') {
 }
 if (!empty($errors)) {
     $_SESSION['old'] = [
-        'nama'  => $nama,
+        'nama' => $nama,
         'email' => $email,
         'pesan' => $pesan,
     ];
     $_SESSION['flash_error'] = implode('<br>', $errors);
     redirect_ke('index.php#contact');
 }
-$_SESSION['flash_sukses'] = 'Pesan berhasil dikirim!';
-redirect_ke('index.php#contact');
+
 // menyiapkan query INSERT dengan prepared statement
 $sql = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
-$stmt = mysqli_prepare($con, $sql);
+$stmt = mysqli_prepare($conn, $sql);
 if (!$stmt) {
     $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
     redirect_ke('index.php#contact');
 }
 mysqli_stmt_bind_param($stmt, "sss", $nama, $email, $pesan);
-if (mysqli_stmt_execute($stmt)) {  
+if (mysqli_stmt_execute($stmt)) {
     unset($_SESSION['old']);
     $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
     redirect_ke('index.php#contact');
 } else {
     $_SESSION['old'] = [
-        'nama'  => $nama,
+        'nama' => $nama,
         'email' => $email,
         'pesan' => $pesan,
     ];

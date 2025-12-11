@@ -25,6 +25,6 @@ if (!function_exists('tampilkanBiodata')) {
         return $html;
         
     }
-    require_once 'functions.php';
+    require_once 'fungsi.php';
 
 }

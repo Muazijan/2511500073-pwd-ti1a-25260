@@ -145,10 +145,10 @@ $captcha= $old['captcha']?? '';
         </label>
 
         <button type="submit">Kirim</button>
-        <button type="reset">Kirim</button>
+        <button type="reset">batal</button>
         <a href="read.php" class="reset">Kembali</a>
     </form>
-    
+
     </section>
     </main>
 

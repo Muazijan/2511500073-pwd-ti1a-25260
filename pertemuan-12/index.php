@@ -149,6 +149,11 @@ require_once __DIR__ . '/fungsi.php';
             required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
           <small id="charCount">0/200 karakter</small>
         </label>
+        
+        <label for="txtCaptcha"><span>Captcha 1+1 = ?</span>
+          <input type="number" id="txtCaptcha" name="txtCaptcha"
+            placeholder="Jawab Pertanyaan..." required>
+        </label>
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>

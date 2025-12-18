@@ -11,6 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 $nama = bersihkan($_POST['txtNama'] ?? '');
 $email = bersihkan($_POST['txtEmail'] ?? '');
 $pesan = bersihkan($_POST['txtPesan'] ?? '');
+$captcha = bersihkan($_POST['txtcaptcha'] ?? '');
+
+
 $errors = [];
 if ($nama === '') {
     $errors[] = 'Nama wajib diisi.';
@@ -23,11 +26,15 @@ if ($email === '') {
 if ($pesan === '') {
     $errors[] = 'Pesan wajib diisi.';
 }
+if ($captcha === '') {
+    $errors[] = 'yahahahahah salah.';
+}
 if (!empty($errors)) {
     $_SESSION['old'] = [
         'nama' => $nama,
         'email' => $email,
         'pesan' => $pesan,
+        'captcha'=> $captcha,
     ];
     $_SESSION['flash_error'] = implode('<br>', $errors);
     redirect_ke('index.php#contact');

@@ -52,7 +52,7 @@ if (mb_strlen($nama) < 3) {
 if (mb_strlen($pesan) < 10) {
     $errors[] = 'Pesan minimal 10 karakter.';
 }
-if ($captcha !== "1") {
+if ($captcha !== "3") {
     $errors[] = 'Jawaban ' . $captcha . ' captcha salah.';
 }
 
@@ -94,7 +94,7 @@ if (mysqli_stmt_execute($stmt)) {
         'nama'  => $nama,
         'email' => $email,
         'pesan' => $pesan,
-        'captcha'=> $captcha,
+   
     ];
 
     $_SESSION['flash_error'] = 'Data gagal diperbaharui. Silakan coba lagi.';

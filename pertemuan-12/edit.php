@@ -1,76 +1,71 @@
 <?php
- session_start();
- require 'koneksi.php';
- require'fungsi.php';
+session_start();
+require 'koneksi.php';
+require 'fungsi.php';
 
-$cid = filter_input(
-    INPUT_GET,
-    'cid',
-    FILTER_VALIDATE_INT,
-    ['options' => ['min_range' => 1]]
-);
+
+$cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT, [
+    'options' => ['min_range' => 1]
+]);
+
 if (!$cid) {
     $_SESSION['flash_error'] = "Akses tidak valid";
     redirect_ke('read.php');
     exit;
 }
+
+
 $stmt = mysqli_prepare(
     $conn,
-    "SELECT cid, cnama, cemail, cpesan 
-     FROM tbl_tamu 
-     WHERE cid = ? 
+    "SELECT cid, cnama, cemail, cpesan
+     FROM tbl_tamu
+     WHERE cid = ?
      LIMIT 1"
 );
+
 if (!$stmt) {
     $_SESSION['flash_error'] = "Query tidak benar";
     redirect_ke('read.php');
     exit;
 }
+
 mysqli_stmt_bind_param($stmt, "i", $cid);
 mysqli_stmt_execute($stmt);
 $res = mysqli_stmt_get_result($stmt);
-$row = mysqli_fetch_assoc($res);
+$data   = mysqli_fetch_assoc($res);
 mysqli_stmt_close($stmt);
 
- if (!$row) {
+if (!$data) {
     $_SESSION['flash_error'] = "Data tidak ditemukan";
     redirect_ke('read.php');
+    exit;
 }
 
-$nama   = $row['cnama']  ?? '';
-$email  = $row['cemail'] ?? '';
-$pesan  = $row['cpesan'] ?? '';
+/* data dari DB */
+$nama  = $data['cnama'];
+$email = $data['cemail'];
+$pesan = $data['cpesan'];
 
-$flash_error = $_SESSION['flash_error'] ?? [];
-$old         = $_SESSION['old'] ?? [];
-
-unset($_SESSION['flash_error'], $_SESSION['old']);
-if (!empty($old)) {
-    $nama   = $old['nama']   ?? $nama;
-    $email  = $old['email']  ?? $email;
-    $pesan  = $old['pesan']  ?? $pesan;
-}
-?>
-
-<?php
-
-
+/* flash & old */
 $flash_error = $_SESSION['flash_error'] ?? '';
-$old         = $_SESSION['old'] ?? [];
-
+$old = $_SESSION['old'] ?? [];
 unset($_SESSION['flash_error'], $_SESSION['old']);
 
-$nama   = $old['nama']   ?? '';
-$email  = $old['email']  ?? '';
-$pesan  = $old['pesan']  ?? '';
-
+/* jika redirect karena error */
+if (!empty($old)) {
+    $nama    = $old['nama']    ?? $nama;
+    $email   = $old['email']   ?? $email;
+    $pesan   = $old['pesan']   ?? $pesan;
+    $captcha = $old['captcha'] ?? '';
+} else {
+    $captcha = '';
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Buku Tamu</title>
+    <title>Edit Buku Tamu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -78,9 +73,6 @@ $pesan  = $old['pesan']  ?? '';
 
 <header>
     <h1>Ini Header</h1>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-    
-    </button>
     <nav>
         <ul>
             <li><a href="index.php">Beranda</a></li>
@@ -92,54 +84,46 @@ $pesan  = $old['pesan']  ?? '';
 
 <main id="contact">
     <h2>Edit Buku Tamu</h2>
+
     <?php if (!empty($flash_error)) : ?>
-        <div style="
-            padding:10px;
-            margin-bottom:10px;
-            background:#f8d7da;
-            color:#721c24;
-            border-radius:6px;">
-            <?= $flash_error; ?>
+        <div style="padding:10px;background:#f8d7da;color:#721c24;border-radius:6px;margin-bottom:10px;">
+            <?= $flash_error ?>
         </div>
     <?php endif; ?>
 
     <form action="proses_update.php" method="POST">
 
-        <input type="txt" name="cid" value="<?= (int)$cid; ?>">
+        <input type="txt" name="cid" value="<?= (int)$cid ?>">
 
-        <label for="txtNama"><span>Nama:</span>
-    <input type="text" id="txtNama" name="txtNamaEd"
-        placeholder="Masukkan nama" required autocomplete="name"
-        value="<?= !empty($nama) ? $nama : '' ?>">
-</label>
+        <label>
+            <span>Nama:</span>
+            <input type="text" name="txtNamaEd" required
+                   value="<?= htmlspecialchars($nama) ?>">
+        </label>
 
-<label for="txtEmail"><span>Email:</span>
-    <input type="email" id="txtEmail" name="txtEmailEd"
-        placeholder="Masukkan email" required autocomplete="email"
-        value="<?= !empty($email) ? $email : '' ?>">
-</label>
+        <label>
+            <span>Email:</span>
+            <input type="email" name="txtEmailEd" required
+                   value="<?= htmlspecialchars($email) ?>">
+        </label>
 
-<label for="txtPesan"><span>Pesan Anda:</span>
-    <textarea id="txtPesan" name="txtPesanEd" rows="4"
-        placeholder="Tulis pesan anda..." required><?= !empty($pesan) ? $pesan : '' ?></textarea>
-</label>
+        <label>
+            <span>Pesan Anda:</span>
+            <textarea name="txtPesanEd" rows="4" required><?= htmlspecialchars($pesan) ?></textarea>
+        </label>
 
-<label for="txtCaptcha"><span>Captcha 1 x 1 = ?</span>
-    <input type="number" id="txtCaptcha" name="txtCaptcha"
-        placeholder="Jawab Pertanyaan..." required>
-</label>
+        <label>
+            <span>Captcha 1 x 1 = ?</span>
+            <input type="number" name="txtCaptcha" required
+                   value="<?= htmlspecialchars($captcha) ?>">
+        </label>
 
-<button type="submit">Kirim</button>
-<button type="reset">Batal</button>
-<a href="read.php" class="reset">Kembali</a>
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+        <a href="read.php" class="reset">Kembali</a>
 
-    </section>
-    </main>
+    </form>
+</main>
 
-    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-

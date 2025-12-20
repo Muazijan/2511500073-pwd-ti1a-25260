@@ -157,6 +157,7 @@ require_once __DIR__ . '/fungsi.php';
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
+        <a href="read.php" class="reset">kembali</a>
       </form>
 
         <?php include("read_inc.php"); ?>

@@ -87,7 +87,7 @@ if (mysqli_stmt_execute($stmt)) {
 
    
     $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
-    redirect_ke('edit.php'); // pola PRG: kembali ke data dan exit()
+    redirect_ke(''); // pola PRG: kembali ke data dan exit()
 } else {
 
     $_SESSION['old'] = [

@@ -52,7 +52,7 @@ if (mb_strlen($nama) < 3) {
 if (mb_strlen($pesan) < 10) {
     $errors[] = 'Pesan minimal 10 karakter.';
 }
-if ($captcha !== "3") {
+if ($captcha !== "1") {
     $errors[] = 'Jawaban ' . $captcha . ' captcha salah.';
 }
 

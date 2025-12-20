@@ -26,7 +26,7 @@ if ($email === '') {
 if ($pesan === '') {
     $errors[] = 'Pesan wajib diisi.';
 }
-if ($captcha === '2') {
+if ($captcha === '') {
     $errors[] = 'yahahahahah salah.';
 }
 if (!empty($errors)) {

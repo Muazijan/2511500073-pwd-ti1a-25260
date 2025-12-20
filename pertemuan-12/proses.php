@@ -26,7 +26,7 @@ if ($email === '') {
 if ($pesan === '') {
     $errors[] = 'Pesan wajib diisi.';
 }
-if ($captcha === '3') {
+if ($captcha === '2') {
     $errors[] = 'yahahahahah salah.';
 }
 if (!empty($errors)) {
@@ -57,6 +57,7 @@ if (mysqli_stmt_execute($stmt)) {
         'nama' => $nama,
         'email' => $email,
         'pesan' => $pesan,
+        'captcha'=> $captcha,
     ];
 
     $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';

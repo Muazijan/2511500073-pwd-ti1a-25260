@@ -45,9 +45,10 @@ unset($_SESSION['flash_sukses'], $_SESSION['flash_error']);
         <th>Pesan</th>
         <th>Created At</th>
     </tr>
-
+    <?php $i = 1;?>
     <?php while ($row = mysqli_fetch_assoc($q)): ?>
         <tr>
+            <td><?= $i++ ?></td>
             <td><?= $no++; ?></td>
             <td>  <a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a>
             <td><?= $row['cnama']; ?></td>

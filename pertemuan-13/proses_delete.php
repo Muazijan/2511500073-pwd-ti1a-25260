@@ -44,9 +44,9 @@
     mysqli_stmt_bind_param($stmt, "i", $cid);
 
     if (mysqli_stmt_execute($stmt)) {
-      $_SESSION['flash_sukses1'] = 'Data tamu berhasil dihapus.';
+      $_SESSION['flash_sukses'] = 'Data tamu berhasil dihapus.';
     } else {
-      $_SESSION['flash_error1'] = 'Gagal menghapus data tamu.';
+      $_SESSION['flash_error'] = 'Gagal menghapus data tamu.';
     }
 
     mysqli_stmt_close($stmt);

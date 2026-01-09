@@ -111,9 +111,6 @@ include 'koneksi.php';
             ?>
         </tbody>
     </table>
-
-    <br>
-    <a href="index.php"> Tambah Data Baru</a>
-
+ 
 </body>
 </html>

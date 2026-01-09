@@ -10,7 +10,7 @@
   $nim = filter_input(INPUT_GET, 'nim', FILTER_SANITIZE_SPECIAL_CHARS);
 
   if (!$nim) {
-    $_SESSION['flash_error'] = 'Akses tidak valid. NIM tidak ditemukan.';
+    $_SESSION['flash_error1'] = 'Akses tidak valid. NIM tidak ditemukan.';
     redirect_ke('read_mahasigma.php');
   }
 
@@ -18,7 +18,7 @@
   */
   $stmt = mysqli_prepare($conn, "SELECT * FROM mahasiswa WHERE nim = ? LIMIT 1");
   if (!$stmt) {
-    $_SESSION['flash_error'] = 'Kesalahan sistem pada query.';
+    $_SESSION['flash_error1'] = 'Kesalahan sistem pada query.';
     redirect_ke('read_mahasigma.php');
   }
 
@@ -29,16 +29,16 @@
   mysqli_stmt_close($stmt);
 
   if (!$data) {
-    $_SESSION['flash_error'] = 'Data mahasiswa tidak ditemukan.';
+    $_SESSION['flash_error1'] = 'Data mahasiswa tidak ditemukan.';
     redirect_ke('read_mahasigma.php');
   }
 
   /* 3. PENANGANAN PRE-FILL (Isi otomatis form)
     Mengambil data dari DB atau dari input lama (old input) jika ada error saat submit.
   */
-  $flash_error = $_SESSION['flash_error'] ?? '';
-  $old = $_SESSION['old'] ?? [];
-  unset($_SESSION['flash_error'], $_SESSION['old']);
+  $flash_error = $_SESSION['flash_error1'] ?? '';
+  $old = $_SESSION['old1'] ?? [];
+  unset($_SESSION['flash_error1'], $_SESSION['old1']);
 
   // Logika: Jika ada input lama (setelah gagal submit), pakai itu. Jika tidak, pakai data DB.
   $nama_lengkap    = $old['nama_lengkap'] ?? $data['nama_lengkap'];
@@ -76,13 +76,13 @@
       <section id="biodata">
         <h2>Edit Biodata Mahasiswa</h2>
 
-        <?php if (!empty($flash_error)): ?>
+        <?php if (!empty($flash_error1)): ?>
           <div style="padding:10px; margin-bottom:10px; background:#f8d7da; color:#721c24; border-radius:6px; border: 1px solid #f5c6cb;">
-            <?= htmlspecialchars($flash_error); ?>
+            <?= htmlspecialchars($flash_error1); ?>
           </div>
         <?php endif; ?>
 
-        <form action="proses_update.php" method="POST">
+        <form action="proses_mahasiswa.php" method="POST">
           
           <label><span>NIM (ID):</span>
             <input type="text" value="<?= htmlspecialchars($nim); ?>" disabled>
@@ -134,11 +134,11 @@
                    value="<?= htmlspecialchars($nama_adik); ?>">
           </label>
 
-          <div class="button-group">
+         
             <button type="submit">Update Data</button>
             <button type="reset">Reset</button>
             <a href="read_mahasigma.php" class="btn-back" style="text-decoration: none; padding: 10px; background: #eee; border-radius: 4px; color: #333;">Batal</a>
-          </div>
+          
 
         </form>
       </section>

@@ -5,7 +5,7 @@ require_once __DIR__ . '/fungsi.php';
 
 // 1. Pastikan hanya akses POST yang diizinkan
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $_SESSION['flash_error'] = 'Akses tidak valid.';
+    $_SESSION['flash_error1'] = 'Akses tidak valid.';
     redirect_ke('index.php#biodata');
 }
 
@@ -30,10 +30,10 @@ if (isset($_POST['txtNim']) || isset($_POST['nim'])) {
     $adik      = bersihkan($_POST['nama_adik'] ?? $_POST['txtNmAdik'] ?? '');
 
     // Simpan input lama jika terjadi kesalahan validasi
-    $_SESSION['old'] = $_POST;
+    $_SESSION['old1'] = $_POST;
 
     if ($nim === '' || $nama === '') {
-        $_SESSION['flash_error'] = "NIM dan Nama Lengkap wajib diisi!";
+        $_SESSION['flash_error1'] = "NIM dan Nama Lengkap wajib diisi!";
         // Jika dari halaman edit, kembali ke edit. Jika tidak, ke index.
         $url = isset($_POST['nim']) ? "edit_mahasigma.php?nim=$nim" : "index.php#biodata";
         redirect_ke($url);
@@ -58,19 +58,19 @@ if (isset($_POST['txtNim']) || isset($_POST['nim'])) {
     $stmt = mysqli_prepare($conn, $sql);
 
     if (!$stmt) {
-        $_SESSION['flash_error'] = "Gagal menyiapkan perintah: " . mysqli_error($conn);
+        $_SESSION['flash_error1'] = "Gagal menyiapkan perintah: " . mysqli_error($conn);
         redirect_ke("read_mahasigma.php");
     }
 
     mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $nama, $tempat, $tanggal, $hobi, $pasangan, $pekerjaan, $ortu, $kakak, $adik);
 
     if (mysqli_stmt_execute($stmt)) {
-        $_SESSION['flash_sukses'] = "Data mahasiswa berhasil disimpan/diperbarui.";
-        unset($_SESSION['old']);
+        $_SESSION['flash_sukses1'] = "Data mahasiswa berhasil disimpan/diperbarui.";
+        unset($_SESSION['old1']);
         // Setelah sukses, arahkan ke daftar mahasiswa
         redirect_ke("index.php#biodata");
     } else {
-        $_SESSION['flash_error'] = "Gagal memproses data: " . mysqli_stmt_error($stmt);
+        $_SESSION['flash_error1'] = "Gagal memproses data: " . mysqli_stmt_error($stmt);
         redirect_ke("index.php#biodata");
     }
 

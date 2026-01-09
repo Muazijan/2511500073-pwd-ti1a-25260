@@ -18,9 +18,9 @@
     mysqli_stmt_bind_param($stmt, "s", $nim);
 
     if (mysqli_stmt_execute($stmt)) {
-        $_SESSION['flash_sukses'] = 'Data mahasiswa berhasil dihapus.';
+        $_SESSION['flash_sukses1'] = 'Data mahasiswa berhasil dihapus.';
     } else {
-        $_SESSION['flash_error'] = 'Gagal menghapus data mahasiswa.';
+        $_SESSION['flash_error1'] = 'Gagal menghapus data mahasiswa.';
     }
 
     mysqli_stmt_close($stmt);
@@ -36,7 +36,7 @@
     ]);
 
     if (!$cid) {
-      $_SESSION['flash_error'] = 'ID Tamu tidak valid.';
+      $_SESSION['flash_error1'] = 'ID Tamu tidak valid.';
       redirect_ke('read.php'); // Asumsi read.php adalah halaman buku tamu
     }
 
@@ -44,9 +44,9 @@
     mysqli_stmt_bind_param($stmt, "i", $cid);
 
     if (mysqli_stmt_execute($stmt)) {
-      $_SESSION['flash_sukses'] = 'Data tamu berhasil dihapus.';
+      $_SESSION['flash_sukses1'] = 'Data tamu berhasil dihapus.';
     } else {
-      $_SESSION['flash_error'] = 'Gagal menghapus data tamu.';
+      $_SESSION['flash_error1'] = 'Gagal menghapus data tamu.';
     }
 
     mysqli_stmt_close($stmt);

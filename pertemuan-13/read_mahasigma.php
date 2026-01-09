@@ -51,11 +51,11 @@ include 'koneksi.php';
 
     <h2>Daftar Biodata Mahasiswa</h2>
 
-    <?php if(isset($_SESSION['flash_sukses'])): ?>
+    <?php if(isset($_SESSION['flash_sukses1'])): ?>
         <div class="alert alert-success">
             <?php 
-                echo $_SESSION['flash_sukses']; 
-                unset($_SESSION['flash_sukses']); // Hapus pesan setelah ditampilkan
+                echo $_SESSION['flash_sukses1']; 
+                unset($_SESSION['flash_sukses1']); // Hapus pesan setelah ditampilkan
             ?>
         </div>
     <?php endif; ?>

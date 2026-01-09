@@ -117,7 +117,7 @@
     
     # 1. Hanya izinkan metode POST
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        $_SESSION['flash_error_mahasiswa'] = 'Akses ditolak.';
+        $_SESSION['flash_error1'] = 'Akses ditolak.';
         redirect_ke('read_mahasigma.php');
     }
     
@@ -142,7 +142,7 @@
     # 4. Jika ada error, balik ke form edit
     if (!empty($errors)) {
         $_SESSION['old_mahasiswa'] = $_POST;
-        $_SESSION['flash_error_mahasiswa'] = implode('<br>', $errors);
+        $_SESSION['flash_error1'] = implode('<br>', $errors);
         redirect_ke("edit_mahasiswa.php?nim=" . $nim);
     }
     
@@ -164,15 +164,15 @@
     
         if (mysqli_stmt_execute($stmt)) {
             unset($_SESSION['old_mahasiswa']);
-            $_SESSION['flash_sukses_mahasiswa'] = "Data mahasiswa $nim berhasil diperbarui.";
+            $_SESSION['flash_sukses1'] = "Data mahasiswa $nim berhasil diperbarui.";
             redirect_ke('read_mahasigma.php');
         } else {
-            $_SESSION['flash_error_mahasiswa'] = "Gagal memperbarui data: " . mysqli_error($conn);
+            $_SESSION['flash_error1'] = "Gagal memperbarui data: " . mysqli_error($conn);
             redirect_ke("edit_mahasiswa.php?nim=" . $nim);
         }
         mysqli_stmt_close($stmt);
     } else {
-        $_SESSION['flash_error_mahasiswa'] = "Kesalahan sistem database.";
+        $_SESSION['flash_error1'] = "Kesalahan sistem database.";
         redirect_ke("edit_mahasigma.php?nim=" . $nim);
     }
 

@@ -36,8 +36,8 @@
   /* 3. PENANGANAN PRE-FILL (Isi otomatis form)
     Mengambil data dari DB atau dari input lama (old input) jika ada error saat submit.
   */
-  $flash_error = $_SESSION['flash_error1'] ?? '';
-  $old = $_SESSION['old1'] ?? [];
+  $flash_error1 = $_SESSION['flash_error1'] ?? '';
+  $old1 = $_SESSION['old1'] ?? [];
   unset($_SESSION['flash_error1'], $_SESSION['old1']);
 
   // Logika: Jika ada input lama (setelah gagal submit), pakai itu. Jika tidak, pakai data DB.

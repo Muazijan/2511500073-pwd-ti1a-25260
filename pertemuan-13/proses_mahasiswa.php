@@ -4,7 +4,7 @@ require __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $_SESSION['flash_error_mahasiswa'] = 'Akses ditolak.';
+    $_SESSION['flash_error1'] = 'Akses ditolak.';
     redirect_ke('read_mahasigma.php');
 }
 
@@ -25,8 +25,8 @@ if ($tempat_lahir === '') $errors[] = "Tempat Lahir wajib diisi.";
 if ($tanggal_lahir === '') $errors[] = "Tanggal Lahir wajib diisi.";
 
 if (!empty($errors)) {
-    $_SESSION['old_mahasiswa'] = $_POST;
-    $_SESSION['flash_error_mahasiswa'] = implode('<br>', $errors);
+    $_SESSION['old1'] = $_POST;
+    $_SESSION['flash_error1'] = implode('<br>', $errors);
     redirect_ke("edit_mahasigma.php?nim=$nim");
 }
 
@@ -39,7 +39,7 @@ $sql = "UPDATE mahasiswa SET
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
-    $_SESSION['flash_error_mahasiswa'] = "Kesalahan sistem.";
+    $_SESSION['flash_error1'] = "Kesalahan sistem.";
     redirect_ke("edit_mahasigma.php?nim=$nim");
 }
 
@@ -52,10 +52,10 @@ mysqli_stmt_bind_param(
 );
 
 if (mysqli_stmt_execute($stmt)) {
-    unset($_SESSION['old_mahasiswa']);
-    $_SESSION['flash_sukses_mahasiswa'] = "Data mahasiswa $nim berhasil diperbarui.";
+    unset($_SESSION['old1']);
+    $_SESSION['flash_sukses1'] = "Data mahasiswa $nim berhasil diperbarui.";
     redirect_ke('read_mahasigma.php');
 } else {
-    $_SESSION['flash_error_mahasiswa'] = "Gagal memperbarui data.";
+    $_SESSION['flash_error1'] = "Gagal memperbarui data.";
     redirect_ke("edit_mahasigma.php?nim=$nim");
 }

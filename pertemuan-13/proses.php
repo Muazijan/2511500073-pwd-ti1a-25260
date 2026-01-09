@@ -68,10 +68,10 @@ if (isset($_POST['txtNim']) || isset($_POST['nim'])) {
         $_SESSION['flash_sukses'] = "Data mahasiswa berhasil disimpan/diperbarui.";
         unset($_SESSION['old']);
         // Setelah sukses, arahkan ke daftar mahasiswa
-        redirect_ke("read_mahasigma.php");
+        redirect_ke("index.php#biodata");
     } else {
         $_SESSION['flash_error'] = "Gagal memproses data: " . mysqli_stmt_error($stmt);
-        redirect_ke("read_mahasigma.php");
+        redirect_ke("index.php#biodata");
     }
 
     mysqli_stmt_close($stmt);

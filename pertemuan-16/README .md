@@ -9,7 +9,7 @@ nim : 2511500073
 <li>mengupdate proses_mahasiswa.php agar mahasiswa bisa kebaca</li>
 <li>menambahkan file proses_delete </li>
 <li>menambahkan file  edit.php</li>
-<li>membuat file baru edit_mahasigma.php</li>
+<li>membuat file baru dengan nama edit_mahasigma.php</li>
 <li>membuat file baru proses_update.php</li>
 <li>membuat file baru proses_delete.php</li>
 <li>membuat isi kodingan di edit_mahasigma.php agar bisa di edit</li>

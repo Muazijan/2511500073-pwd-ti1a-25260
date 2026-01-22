@@ -11,7 +11,7 @@ nim : 2511500073
 <li>menambahkan file  edit.php</li>
 <li>membuat file baru dengan nama edit_mahasigma.php</li>
 <li>membuat file baru dengan nama proses_update.php</li>
-<li>membuat file baru proses_delete.php</li>
+<li>membuat file baru dengan nama proses_delete.php</li>
 <li>membuat isi kodingan di edit_mahasigma.php agar bisa di edit</li>
 <li>membuat isi kodingan proses_update.php agar ketika di edit dapat diproses</li>
 <li>membuat isi kodingan proses_delete.php agar bisa menghapus data</li>

@@ -13,7 +13,7 @@ nim : 2511500073
 <li>membuat file baru dengan nama proses_update.php</li>
 <li>membuat file baru dengan nama proses_delete.php</li>
 <li>membuat isi kodingan pada file edit_mahasigma.php agar bisa di edit</li>
-<li>membuat isi kodingan proses_update.php agar ketika di edit dapat diproses</li>
+<li>membuat isi kodingan pada file proses_update.php agar ketika di edit dapat diproses</li>
 <li>membuat isi kodingan proses_delete.php agar bisa menghapus data</li>
 <li>merapikan codingan agar terlihat rapih </li>
 <li>terakhir coba semua fitur yang telah kita buat</li>

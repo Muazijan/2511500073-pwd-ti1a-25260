@@ -1,6 +1,6 @@
 # pertemuan-16
-nama: muazijan pratama
-nim : 2511500073
+<br>nama: muazijan pratama</br>
+<br>nim : 2511500073</br>
 <ol>
 <li>mendownload file bahan ajar</li>
 <li>membuat tabel baru di database php myadmin</li>

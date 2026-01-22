@@ -4,7 +4,7 @@ nim : 2511500073
 <ol>
 <li>mendownload file bahan ajar</li>
 <li>membuat tabel baru di database php myadmin</li>
-<li>menambahkan file baru proses_simpan.php</li>
+<li>menambahkan file baru proses_simpan.php di prtemuan-16</li>
 <li>membuat file baru read_mahasigma.php untuk membaca mysql</li>
 <li>update proses_mahasiswa.php agar mahasiswa bisa kebaca</li>
 <li>menambahkan delete dan edit di mahasiswa</li>

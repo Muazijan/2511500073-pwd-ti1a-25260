@@ -16,5 +16,5 @@ nim : 2511500073
 <li>membuat isi kodingan pada file proses_update.php agar ketika di edit dapat diproses</li>
 <li>membuat isi kodingan proses_delete.php agar bisa menghapus data</li>
 <li>merapikan isi codingan agar terlihat rapih </li>
-<li>terakhir coba semua fitur yang telah kita buat</li>
+<li>terakhir mencoba semua fitur yang telah kita buat apakah berjalan atau tidak</li>
 </ol>

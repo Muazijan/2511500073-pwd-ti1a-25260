@@ -8,7 +8,7 @@ nim : 2511500073
 <li>membuat file baru  dengan nama read_mahasigma.php untuk membaca mysql</li>
 <li>mengupdate proses_mahasiswa.php agar mahasiswa bisa kebaca</li>
 <li>menambahkan file proses_delete </li>
-<li>menambahkan file  edit_mahasigma</li>
+<li>menambahkan file  edit.php</li>
 <li>membuat file baru edit_mahasigma.php</li>
 <li>membuat file baru proses_update.php</li>
 <li>membuat file baru proses_delete.php</li>
